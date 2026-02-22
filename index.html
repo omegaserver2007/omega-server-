@@ -4,13 +4,144 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>OmegaServer | Minecraft 1.21.10</title>
-<meta name="description" content="OmegaServer — Vanilla+ Minecraft сервер 1.21.10. Java + Bedrock. Заходи и играй вместе!">
+<meta name="description" content="OmegaServer — Vanilla+ Minecraft сервер 1.21.10. Java Edition. Заходи и играй вместе!">
 <meta property="og:title" content="OmegaServer | Minecraft 1.21.10">
-<meta property="og:description" content="Vanilla+ сервер • Java + Bedrock • Заходи и играй!">
+<parameter name="og:description" content="Vanilla+ сервер • Java Edition • Заходи и играй!">
 <meta property="og:url" content="https://omegaserver.online/">
 <meta name="theme-color" content="#020912">
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
 <style>
+/* ═══ БОЛЬШАЯ КНОПКА "ЗАЙТИ СЕЙЧАС" ═══ */
+.cta-big{margin-top:32px;display:flex;flex-direction:column;align-items:center;gap:10px;opacity:0;animation:fadeUp .8s ease forwards 1.3s}
+
+.play-now-btn{position:relative;font-family:'Orbitron',sans-serif;font-size:18px;font-weight:900;letter-spacing:3px;padding:20px 50px;background:linear-gradient(135deg,#00aaff,#0066ff);color:#fff;border:none;border-radius:50px;cursor:pointer;transition:all .3s;text-transform:uppercase;box-shadow:0 8px 32px rgba(0,170,255,.4),inset 0 0 20px rgba(255,255,255,.1);overflow:visible;z-index:1}
+
+.play-now-btn:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,170,255,.6)}
+
+.play-now-btn:active{transform:scale(.97)}
+
+.pulse-ring,.pulse-ring-2{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100%;height:100%;border:2px solid #00aaff;border-radius:50px;opacity:0;animation:pulse-ring 2s cubic-bezier(0,0,.2,1) infinite;z-index:-1}
+
+.pulse-ring-2{animation-delay:1s}
+
+@keyframes pulse-ring{0%{transform:translate(-50%,-50%) scale(1);opacity:.7}100%{transform:translate(-50%,-50%) scale(1.3);opacity:0}}
+
+.cta-hint{font-family:'Share Tech Mono',monospace;font-size:11px;color:rgba(226,212,240,.4);letter-spacing:1.5px}
+
+
+/* ═══ ПОЧЕМУ OMEGASERVER ═══ */
+.why-us{background:rgba(4,14,28,.4)}
+
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+
+.why-card{background:rgba(2,9,18,.8);border:1px solid rgba(0,170,255,.1);border-radius:16px;padding:28px 24px;text-align:center;transition:all .3s;position:relative;overflow:hidden}
+
+.why-card::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(0,170,255,.08) 0%,transparent 70%);transform:scale(0);transition:transform .5s;pointer-events:none}
+
+.why-card:hover::before{transform:scale(1)}
+
+.why-card:hover{border-color:rgba(0,170,255,.3);transform:translateY(-5px);box-shadow:0 10px 40px rgba(0,170,255,.15)}
+
+.why-icon{font-size:42px;margin-bottom:14px;filter:drop-shadow(0 0 10px rgba(0,170,255,.3))}
+
+.why-title{font-family:'Orbitron',sans-serif;font-size:15px;font-weight:700;color:var(--primary);margin-bottom:10px;letter-spacing:2px;text-transform:uppercase}
+
+.why-desc{font-size:14px;color:rgba(226,212,240,.65);line-height:1.6}
+
+
+/* ═══ ГАЛЕРЕЯ ═══ */
+.gallery{background:rgba(4,14,28,.3)}
+
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+
+.gallery-item{position:relative;border-radius:14px;overflow:hidden;cursor:pointer;aspect-ratio:3/2;border:1px solid rgba(0,170,255,.1);transition:all .3s}
+
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+
+.gallery-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 0%,rgba(0,0,0,.7) 100%);display:flex;align-items:flex-end;padding:16px;opacity:0;transition:opacity .3s}
+
+.gallery-item:hover .gallery-overlay{opacity:1}
+
+.gallery-item:hover img{transform:scale(1.1)}
+
+.gallery-item:hover{border-color:rgba(0,170,255,.3);box-shadow:0 8px 30px rgba(0,170,255,.2)}
+
+.gallery-label{font-family:'Share Tech Mono',monospace;font-size:13px;color:#fff;letter-spacing:1px;font-weight:600}
+
+.gallery-note{text-align:center;margin-top:24px;font-family:'Share Tech Mono',monospace;font-size:12px;color:rgba(226,212,240,.4);letter-spacing:1.5px}
+
+
+/* ═══ ОТЗЫВЫ ═══ */
+.testimonials{background:rgba(4,14,28,.4)}
+
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+
+.testimonial-card{background:rgba(2,9,18,.8);border:1px solid rgba(0,170,255,.1);border-radius:14px;padding:24px;transition:all .3s}
+
+.testimonial-card:hover{border-color:rgba(0,170,255,.3);transform:translateY(-3px);box-shadow:0 8px 30px rgba(0,170,255,.12)}
+
+.testimonial-stars{font-size:16px;margin-bottom:14px;letter-spacing:2px}
+
+.testimonial-text{font-size:14px;color:rgba(226,212,240,.7);line-height:1.7;margin-bottom:16px;font-style:italic}
+
+.testimonial-author{display:flex;align-items:center;gap:10px;padding-top:16px;border-top:1px solid rgba(0,170,255,.08)}
+
+.testimonial-author img{width:32px;height:32px;border-radius:50%;border:1px solid rgba(0,170,255,.2)}
+
+.testimonial-name{font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--primary);letter-spacing:1px}
+
+
+/* ═══ FAQ ═══ */
+.faq{background:rgba(4,14,28,.3)}
+
+.faq-container{max-width:800px;margin:0 auto}
+
+.faq-item{background:rgba(2,9,18,.8);border:1px solid rgba(0,170,255,.1);border-radius:14px;padding:20px 24px;margin-bottom:14px;transition:all .3s}
+
+.faq-item:hover{border-color:rgba(0,170,255,.25);box-shadow:0 6px 24px rgba(0,170,255,.1)}
+
+.faq-question{display:flex;align-items:center;gap:12px;cursor:pointer}
+
+.faq-icon{font-size:20px;flex-shrink:0}
+
+.faq-question h3{font-family:'Rajdhani',sans-serif;font-size:16px;font-weight:700;color:#fff;letter-spacing:1px}
+
+.faq-answer{margin-top:14px;padding-top:14px;border-top:1px solid rgba(0,170,255,.08)}
+
+.faq-answer p{font-size:14px;color:rgba(226,212,240,.65);line-height:1.7}
+
+
+/* ═══ ФИНАЛЬНЫЙ CTA ═══ */
+.final-cta{background:linear-gradient(135deg,rgba(0,170,255,.08) 0%,rgba(68,136,255,.05) 100%);padding:80px 20px}
+
+.final-cta-content{text-align:center;max-width:700px;margin:0 auto}
+
+.final-cta-title{font-family:'Orbitron',sans-serif;font-size:clamp(32px,8vw,48px);font-weight:900;color:#fff;margin-bottom:16px;letter-spacing:3px;text-transform:uppercase;text-shadow:0 0 30px rgba(0,170,255,.5)}
+
+.final-cta-text{font-size:clamp(16px,4vw,20px);color:rgba(226,212,240,.8);margin-bottom:36px;line-height:1.6}
+
+.play-now-btn.big{font-size:20px;padding:24px 60px;margin-bottom:24px}
+
+.final-cta-ip{display:inline-flex;align-items:center;gap:10px;background:rgba(0,170,255,.08);border:1px solid rgba(0,170,255,.2);border-radius:50px;padding:12px 24px;margin-bottom:16px}
+
+.final-cta-label{font-family:'Share Tech Mono',monospace;font-size:11px;color:rgba(226,212,240,.5);letter-spacing:2px;text-transform:uppercase}
+
+.final-cta-code{font-family:'Share Tech Mono',monospace;font-size:15px;color:var(--primary);letter-spacing:1px;font-weight:700}
+
+.final-cta-hint{font-family:'Share Tech Mono',monospace;font-size:12px;color:rgba(226,212,240,.5);letter-spacing:1px}
+
+.final-cta-hint a{color:var(--discord);text-decoration:none;font-weight:700;transition:color .3s}
+
+.final-cta-hint a:hover{color:#fff}
+
+
+/* ═══ МОБИЛЬНАЯ АДАПТАЦИЯ ═══ */
+@media(max-width:768px){
+  .play-now-btn{font-size:16px;padding:18px 40px}
+  .play-now-btn.big{font-size:18px;padding:20px 50px}
+  .why-grid,.testimonials-grid,.gallery-grid{grid-template-columns:1fr}
+  .final-cta{padding:60px 20px}
+}
 :root {
   --primary: #00aaff;
   --primary2: #0066ff;
@@ -322,7 +453,7 @@ footer{position:relative;z-index:5;padding:22px 20px;border-top:1px solid rgba(0
   <nav class="nav-desktop">
     <a href="#features">Фичи</a>
     <a href="#changelog">Changelog</a>
-    <a href="#top">Топ</a>
+    <a href="#top">Игроки</a>
     <a href="#howto">Как зайти</a>
     <a href="#social">Соцсети</a>
     <a href="https://discord.gg/AkwGMA6vQJ" target="_blank" class="nav-discord">Discord</a>
@@ -335,7 +466,7 @@ footer{position:relative;z-index:5;padding:22px 20px;border-top:1px solid rgba(0
 <nav class="nav-mobile" id="mobileNav">
   <a href="#features" onclick="closeNav()">⚡ Фичи сервера</a>
   <a href="#changelog" onclick="closeNav()">📋 Changelog</a>
-  <a href="#top" onclick="closeNav()">🏆 Топ игроков</a>
+  <a href="#top" onclick="closeNav()">👥 Игроки</a>
   <a href="#howto" onclick="closeNav()">📖 Как зайти</a>
   <a href="#social" onclick="closeNav()">🌐 Соцсети</a>
   <a href="https://discord.gg/AkwGMA6vQJ" target="_blank" class="nm-discord" onclick="closeNav()">💬 Discord сервер</a>
@@ -351,26 +482,17 @@ footer{position:relative;z-index:5;padding:22px 20px;border-top:1px solid rgba(0
     <span class="line1">OMEGA</span>
     <span class="line2 glitch" data-text="SERVER">SERVER</span>
   </h1>
-  <p class="hero-sub">Vanilla+ сервер&nbsp;• Java + Bedrock&nbsp;•<br>Стримы на Twitch и YouTube</p>
+  <p class="hero-sub">Vanilla+ сервер&nbsp;• Java Edition&nbsp;•<br>Стримы на Twitch и YouTube</p>
 
   <div class="ip-wrapper">
-    <div class="ip-card" onclick="copyIP(this,'updates-launch.gl.joinmc.link','Java IP скопирован!')">
+    <div class="ip-card" onclick="copyIP(this,'updates-launch.gl.joinmc.link','Java IP скопирован!')" style="max-width: 600px; margin: 0 auto;">
       <div class="ip-card-shine"></div>
       <div class="ip-header">
-        <div class="ip-type">☕ Java Edition (ПК)</div>
+        <div class="ip-type">☕ Java Edition</div>
         <span class="ip-copy-icon">📋</span>
       </div>
       <div class="ip-value">updates-launch.gl.joinmc.link</div>
       <div class="ip-copy-hint">нажми чтобы скопировать</div>
-    </div>
-    <div class="ip-card bedrock" onclick="copyIP(this,'subject-abroad.gl.at.ply.gg','Bedrock IP скопирован!')">
-      <div class="ip-card-shine"></div>
-      <div class="ip-header">
-        <div class="ip-type">📱 Bedrock (Телефон)</div>
-        <span class="ip-copy-icon">📋</span>
-      </div>
-      <div class="ip-value">subject-abroad.gl.at.ply.gg</div>
-      <div class="ip-copy-hint">порт: 20075 • нажми чтобы скопировать</div>
     </div>
   </div>
 
@@ -378,6 +500,14 @@ footer{position:relative;z-index:5;padding:22px 20px;border-top:1px solid rgba(0
     <a href="https://discord.gg/AkwGMA6vQJ" target="_blank" class="btn btn-discord">💬 Discord</a>
     <a href="https://www.twitch.tv/omega_max2007" target="_blank" class="btn btn-twitch">🎮 Twitch</a>
     <a href="https://www.youtube.com/@omega2007-j6r" target="_blank" class="btn btn-youtube">▶ YouTube</a>
+    <div class="cta-big">
+    <button class="play-now-btn" onclick="copyIP(this,'updates-launch.gl.joinmc.link','IP скопирован! Открывай Minecraft!')">
+      <span class="pulse-ring"></span>
+      <span class="pulse-ring-2"></span>
+      🎮 ЗАЙТИ СЕЙЧАС
+    </button>
+    <p class="cta-hint">IP автоматически скопируется</p>
+  </div>
     <a href="#howto" class="btn btn-outline">📖 Как зайти</a>
   </div>
 </section>
@@ -410,12 +540,90 @@ footer{position:relative;z-index:5;padding:22px 20px;border-top:1px solid rgba(0
     <div class="stat-label">Режим</div>
   </div>
 </div>
+<section class="sec why-us" id="why">
+  <h2 class="section-title reveal">ПОЧЕМУ OMEGASERVER?</h2>
+  <div class="section-line reveal"></div>
+  
+  <div class="why-grid">
+    <div class="why-card reveal" style="transition-delay:.04s">
+      <div class="why-icon">⚡</div>
+      <h3 class="why-title">БЕЗ ЗАДЕРЖЕК</h3>
+      <p class="why-desc">Мощное железо i5-12400F + 32GB RAM. Сервер летает даже при 50 игроках онлайн. Т.к у сервера нет своего хостинга у игроков может быть пинг 150-200мс. Сборы на хост открыты.</p>
+    </div>
+    
+    <div class="why-card reveal" style="transition-delay:.08s">
+      <div class="why-icon">🛡️</div>
+      <h3 class="why-title">ЧЕСТНАЯ ИГРА</h3>
+      <p class="why-desc">Читеры банятся по IP. Античит + защита от лаг-машин. Играй спокойно.</p>
+    </div>
+    
+    <div class="why-card reveal" style="transition-delay:.12s">
+      <div class="why-icon">🎯</div>
+      <h3 class="why-title">VANILLA+</h3>
+      <p class="why-desc">Почти чистый Minecraft. Минимум плагинов, максимум ванильного опыта.</p>
+    </div>
+    
+    <div class="why-card reveal" style="transition-delay:.16s">
+      <div class="why-icon">⚔️</div>
+      <h3 class="why-title">PVP РАЗРЕШЁН</h3>
+      <p class="why-desc">Хочешь драться? Пожалуйста! Спавн защищён, дальше — свобода действий.</p>
+    </div>
+    
+    <div class="why-card reveal" style="transition-delay:.2s">
+      <div class="why-icon">🏰</div>
+      <h3 class="why-title">ПРИВАТ = ЗАЩИТА</h3>
+      <p class="why-desc">Приватишь базу — никто не тронет. Не приватил? Риск = часть игры.</p>
+    </div>
+    
+    <div class="why-card reveal" style="transition-delay:.24s">
+      <div class="why-icon">🎥</div>
+      <h3 class="why-title">ПОПАДИ В СТРИМ</h3>
+      <p class="why-desc">Стримим на Twitch и YouTube. Строй, сражайся, общайся — окажись в эфире!</p>
+    </div>
+  </div>
+<section class="sec gallery" id="gallery">
+  <h2 class="section-title reveal">АТМОСФЕРА СЕРВЕРА</h2>
+  <div class="section-line reveal"></div>
+  
+  <div class="gallery-grid">
+    <div class="gallery-item reveal" style="transition-delay:.04s">
+      <img src="https://media.discordapp.net/attachments/1474828602028589097/1475108745120841910/2026-02-22_17.35.15.png?ex=699c4993&is=699af813&hm=2e3579198092e86605b312d2be5a0163e2c7e54b12246668a50be20747cf9efe&=&format=webp&quality=lossless&width=1518&height=854" alt="Спавн" loading="lazy">
+      <div class="gallery-overlay">
+        <span class="gallery-label">Спавн сервера</span>
+      </div>
+    </div>
+    
+    <div class="gallery-item reveal" style="transition-delay:.08s">
+      <img src="https://media.discordapp.net/attachments/1386217950322757713/1474468223595446474/B51C5829-81C8-4763-83DB-E601CFD69C00.png?ex=699bef4a&is=699a9dca&hm=e00929d6781d3bfcc5423988745c6781bd7e5e61cfeddf29e947429c3b416206&=&format=webp&quality=lossless" alt="Постройка" loading="lazy">
+      <div class="gallery-overlay">
+        <span class="gallery-label">Постройки игроков</span>
+      </div>
+    </div>
+    
+    <div class="gallery-item reveal" style="transition-delay:.12s">
+      <img src="https://media.discordapp.net/attachments/1474828602028589097/1475109351592296580/image.png?ex=699c4a23&is=699af8a3&hm=ec0e186f4c1993d8793ef9f569cff4aa4bb02a47b24a8809208ca5f48b6b0233&=&format=webp&quality=lossless&width=550&height=300" loading="lazy">
+      <div class="gallery-overlay">
+        <span class="gallery-label">PvP арена</span>
+      </div>
+    </div>
+    
+    <div class="gallery-item reveal" style="transition-delay:.16s">
+      <img src="https://media.discordapp.net/attachments/1474828602028589097/1475109844485673021/image.png?ex=699c4a99&is=699af919&hm=d7cbd4e57383d26ffd7bb9134bca5e5da3989c54886e650e89dbaed30d6166bf&=&format=webp&quality=lossless" alt="Ивент" loading="lazy">
+      <div class="gallery-overlay">
+        <span class="gallery-label">Ивенты</span>
+      </div>
+    </div>
+  </div>
+  
+  <p class="gallery-note reveal">📸 Сделай скрин своей базы — попади в галерею!</p>
+</section>
+</section>
 
 <section class="sec" id="features">
   <h2 class="section-title reveal">ОСОБЕННОСТИ</h2>
   <div class="section-line reveal"></div>
   <div class="features-grid">
-    <div class="feature-card reveal" style="transition-delay:.04s"><div class="feature-icon">📱</div><div class="feature-title">КРОССПЛАТФОРМА</div><div class="feature-desc">Заходи с ПК через Java Edition или с телефона через Bedrock. Играем вместе!</div></div>
+    <div class="feature-card reveal" style="transition-delay:.04s"><div class="feature-icon">📱</div><div class="feature-title">КРОССПЛАТФОРМА</div><div class="feature-desc">Заходи с ПК через Java Edition или с телефона через mojo. Играем вместе!</div></div>
     <div class="feature-card reveal" style="transition-delay:.08s"><div class="feature-icon">🎥</div><div class="feature-title">СТРИМЫ</div><div class="feature-desc">Стримлю на Twitch и YouTube. Попади в эфир и стань звездой сервера!</div></div>
     <div class="feature-card reveal" style="transition-delay:.12s"><div class="feature-icon">🏠</div><div class="feature-title">КОМАНДЫ</div><div class="feature-desc">/sethome, /tpa, /spawn и многое другое для комфортной игры</div></div>
     <div class="feature-card reveal" style="transition-delay:.16s"><div class="feature-icon">🎒</div><div class="feature-title">ЭНДЕР СУНДУК ×2</div><div class="feature-desc">Увеличенный эндер-сундук — больше места для твоих вещей</div></div>
@@ -466,14 +674,47 @@ footer{position:relative;z-index:5;padding:22px 20px;border-top:1px solid rgba(0
 </section>
 
 <section class="sec narrow" id="top">
-  <h2 class="section-title reveal">ТОП ИГРОКОВ</h2>
+  <h2 class="section-title reveal">ИГРОКИ СЕРВЕРА</h2>
   <div class="section-line cyan reveal"></div>
   <div class="leaderboard reveal" id="leaderboard">
     <div class="lb-entry" style="justify-content:center;padding:28px">
       <span style="font-family:'Share Tech Mono',monospace;font-size:12px;color:rgba(226,212,240,.22);letter-spacing:1.5px">ЗАГРУЗКА...</span>
     </div>
   </div>
-  <div class="lb-note reveal">* Рейтинг формируется по числу сессий на сервере. Обновляется автоматически.</div>
+  <div class="lb-note reveal">* Список всех игроков кто заходил на сервер, от новых к старым</div>
+<section class="sec testimonials">
+  <h2 class="section-title reveal">ЧТО ГОВОРЯТ ИГРОКИ</h2>
+  <div class="section-line cyan reveal"></div>
+  
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal" style="transition-delay:.04s">
+      <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testimonial-text">"Хороший сервак, без донат привилегий, всё честно. Админы адекватные."</p>
+      <div class="testimonial-author">
+        <img src="https://mc-heads.net/avatar/Steve/32" alt="player">
+        <span class="testimonial-name">— Dogieft</span>
+      </div>
+    </div>
+    
+    <div class="testimonial-card reveal" style="transition-delay:.08s">
+      <div class="testimonial-stars">⭐⭐⭐</div>
+      <p class="testimonial-text">"Пойдет."</p>
+      <div class="testimonial-author">
+        <img src="https://mc-heads.net/avatar/Alex/32" alt="player">
+        <span class="testimonial-name">— IKOLOP231</span>
+      </div>
+    </div>
+    
+    <div class="testimonial-card reveal" style="transition-delay:.12s">
+      <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testimonial-text">"Классный сервер без лагов, отличная генерация поддержка начинающих. В общем классный сервак"</p>
+      <div class="testimonial-author">
+        <img src="https://mc-heads.net/avatar/Steve/32" alt="player">
+        <span class="testimonial-name">— DePari</span>
+      </div>
+    </div>
+  </div>
+</section>
 </section>
 
 <section class="sec narrow" id="howto">
@@ -482,21 +723,73 @@ footer{position:relative;z-index:5;padding:22px 20px;border-top:1px solid rgba(0
   <div class="steps">
     <div class="step reveal" style="transition-delay:.04s">
       <div class="step-num">01</div>
-      <div class="step-content"><h3>☕ Java Edition (ПК)</h3><p>Minecraft → Мультиплеер → Добавить сервер<br>Адрес: <code>updates-launch.gl.joinmc.link</code><br>Версия: <code>1.21.10</code></p></div>
+      <div class="step-content"><h3>☕ Java Edition</h3><p>Minecraft → Мультиплеер → Добавить сервер<br>Адрес: <code>updates-launch.gl.joinmc.link</code><br>Версия: <code>1.21.10</code></p></div>
     </div>
     <div class="step reveal" style="transition-delay:.08s">
       <div class="step-num">02</div>
-      <div class="step-content"><h3>📱 Bedrock (Телефон / Xbox)</h3><p>Minecraft → Серверы → Добавить сервер<br>Адрес: <code>subject-abroad.gl.at.ply.gg</code><br>Порт: <code>20075</code></p></div>
+      <div class="step-content"><h3>💬 Вступи в Discord</h3><p>Следи за новостями, ивентами и расписанием стримов в нашем Discord!</p></div>
     </div>
     <div class="step reveal" style="transition-delay:.12s">
       <div class="step-num">03</div>
-      <div class="step-content"><h3>💬 Вступи в Discord</h3><p>Следи за новостями, ивентами и расписанием стримов в нашем Discord!</p></div>
-    </div>
-    <div class="step reveal" style="transition-delay:.16s">
-      <div class="step-num">04</div>
       <div class="step-content"><h3>🎥 Попади в стрим!</h3><p>Строй, исследуй, общайся — и ты можешь оказаться в прямом эфире!</p></div>
     </div>
   </div>
+<section class="sec faq">
+  <h2 class="section-title reveal">ЧАСТЫЕ ВОПРОСЫ</h2>
+  <div class="section-line reveal"></div>
+  
+  <div class="faq-container">
+    <div class="faq-item reveal" style="transition-delay:.04s">
+      <div class="faq-question">
+        <span class="faq-icon">❓</span>
+        <h3>Можно ли играть с телефона?</h3>
+      </div>
+      <div class="faq-answer">
+        <p>Можно через mojo launcher, Bedrock поддержка отключена т.к с ней имеются проблемы.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item reveal" style="transition-delay:.08s">
+      <div class="faq-question">
+        <span class="faq-icon">❓</span>
+        <h3>Разрешено ли гриферство?</h3>
+      </div>
+      <div class="faq-answer">
+        <p>Да, НО только неприватные постройки. Приватил базу через /rg claim — защищён. Не приватил — сам виноват.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item reveal" style="transition-delay:.12s">
+      <div class="faq-question">
+        <span class="faq-icon">❓</span>
+        <h3>Есть ли донат / привилегии?</h3>
+      </div>
+      <div class="faq-answer">
+        <p>Нет! Сервер полностью бесплатный. Никаких платных преимуществ. Все на равных. Привелегии даются за достижения на сервере.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item reveal" style="transition-delay:.16s">
+      <div class="faq-question">
+        <span class="faq-icon">❓</span>
+        <h3>Какие плагины установлены?</h3>
+      </div>
+      <div class="faq-answer">
+        <p>Минимум: WorldGuard (приват), LuckPerms (права), EssentialsX (команды) и прочие плагины. Почти ванилла.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item reveal" style="transition-delay:.2s">
+      <div class="faq-question">
+        <span class="faq-icon">❓</span>
+        <h3>Как стать модератором?</h3>
+      </div>
+      <div class="faq-answer">
+        <p>Активно играй, помогай новичкам, не нарушай правила. Набор модеров объявляется в Discord.</p>
+      </div>
+    </div>
+  </div>
+</section>
 </section>
 
 <section class="sec" id="social">
@@ -513,11 +806,36 @@ footer{position:relative;z-index:5;padding:22px 20px;border-top:1px solid rgba(0
       <span class="social-icon">▶</span><div class="social-name">YOUTUBE</div><div class="social-desc">Видео с сервера, хайлайты стримов и эксклюзивный контент</div><span class="social-btn">Подписаться</span>
     </a>
   </div>
+  
+  <div style="margin-top: 40px; display: flex; justify-content: center;">
+    <div class="reveal" style="border-radius: 14px; overflow: hidden; border: 1px solid rgba(88,101,242,.3); box-shadow: 0 8px 40px rgba(88,101,242,.15);">
+      <iframe src="https://discord.com/widget?id=1386217949223976972&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+    </div>
+  </div>
 </section>
 
+<section class="sec final-cta">
+  <div class="final-cta-content reveal">
+    <h2 class="final-cta-title">ГОТОВ НАЧАТЬ?</h2>
+    <p class="final-cta-text">Тысячи блоков ждут тебя. Присоединяйся прямо сейчас!</p>
+    
+    <button class="play-now-btn big" onclick="copyIP(this,'updates-launch.gl.joinmc.link','IP скопирован! Запускай Minecraft!')">
+      <span class="pulse-ring"></span>
+      <span class="pulse-ring-2"></span>
+      🎮 СКОПИРОВАТЬ IP И ЗАЙТИ
+    </button>
+    
+    <div class="final-cta-ip">
+      <span class="final-cta-label">IP сервера:</span>
+      <code class="final-cta-code">updates-launch.gl.joinmc.link</code>
+    </div>
+    
+    <p class="final-cta-hint">💬 Не забудь зайти в <a href="https://discord.gg/AkwGMA6vQJ" target="_blank">Discord</a> — там вся инфа!</p>
+  </div>
+</section>
 <footer>
   <div class="footer-logo">OMEGASERVER</div>
-  <div class="footer-text">MINECRAFT 1.21.10 • JAVA + BEDROCK • © 2026</div>
+  <div class="footer-text">MINECRAFT 1.21.10 • JAVA EDITION • © 2026</div>
   <div class="footer-text">omegaserver.online</div>
 </footer>
 
@@ -656,30 +974,23 @@ function recordPlayers(currentPlayers){
 
 function renderLB(){
   const lb = getLB();
-  const entries = Object.entries(lb).sort((a,b) => b[1].seen - a[1].seen).slice(0,10);
+  // Сортируем по последнему входу (новые сверху)
+  const entries = Object.entries(lb).sort((a,b) => b[1].last - a[1].last);
   const c = document.getElementById('leaderboard');
   if(!entries.length){
     c.innerHTML = `<div class="lb-entry" style="justify-content:center;padding:28px"><span style="font-family:'Share Tech Mono',monospace;font-size:12px;color:rgba(226,212,240,.2);letter-spacing:1.5px">// ДАННЫЕ НАКАПЛИВАЮТСЯ — ЗАГЛЯНИ ПОЗЖЕ</span></div>`;
     return;
   }
-  const max = entries[0][1].seen || 1;
-  const medals = ['🥇','🥈','🥉'], rcs = ['rank-1','rank-2','rank-3'];
   c.innerHTML = entries.map(([name,d],i) => {
-    const pct = Math.round(d.seen/max*100);
     const dt = new Date(d.last);
     const ls = `${String(dt.getDate()).padStart(2,'0')}.${String(dt.getMonth()+1).padStart(2,'0')}.${dt.getFullYear()}`;
-    const rh = i<3 ? `<div class="lb-rank">${medals[i]}</div>` : `<div class="lb-rank other">#${i+1}</div>`;
-    return `<div class="lb-entry ${i<3?rcs[i]:''} reveal" style="transition-delay:${i*.05}s">
-      ${rh}
+    const time = `${String(dt.getHours()).padStart(2,'0')}:${String(dt.getMinutes()).padStart(2,'0')}`;
+    return `<div class="lb-entry reveal" style="transition-delay:${i*.03}s">
+      <div class="lb-rank other">#${i+1}</div>
       <div class="lb-avatar"><img src="https://mc-heads.net/avatar/${name}/32" alt="${name}" loading="lazy" onerror="this.style.display='none'"></div>
       <div class="lb-info">
         <div class="lb-name">${name}</div>
-        <div class="lb-seen">Последний вход: ${ls}</div>
-        <div class="lb-bar-bg"><div class="lb-bar" style="width:${pct}%"></div></div>
-      </div>
-      <div style="text-align:right;flex-shrink:0">
-        <div class="lb-score">${d.seen}</div>
-        <div class="lb-score-lbl">СЕССИЙ</div>
+        <div class="lb-seen">Последний вход: ${ls} в ${time}</div>
       </div>
     </div>`;
   }).join('');
