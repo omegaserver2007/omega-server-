@@ -33,8 +33,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(26,111,196,.05) 0,rgba(26,111,196,.05) 100%) center/100% 1px no-repeat,linear-gradient(rgba(26,111,196,.05) 0,rgba(26,111,196,.05) 100%) center/1px 100% no-repeat;pointer-events:none}
 .eyebrow{font-size:11px;font-weight:700;letter-spacing:6px;text-transform:uppercase;color:var(--bl);margin-bottom:22px;opacity:0;animation:fu .8s .2s forwards}
 .hero-title{font-family:'Cinzel',serif;font-size:clamp(56px,11vw,120px);font-weight:900;line-height:.9;text-align:center;margin-bottom:8px;opacity:0;animation:fu .8s .4s forwards}
-.hero-title .o{color:var(--bl);text-shadow:0 0 40px rgba(26,111,196,.9),0 0 80px rgba(26,111,196,.4);animation:og 3s ease-in-out infinite}
-@keyframes og{0%,100%{text-shadow:0 0 40px rgba(26,111,196,.9),0 0 80px rgba(26,111,196,.4)}50%{text-shadow:0 0 65px rgba(26,111,196,1),0 0 120px rgba(26,111,196,.6)}}
+.hero-title .o{color:var(--bl);text-shadow:0 0 40px rgba(26,111,196,.9),0 0 80px rgba(26,111,196,.4);animation:og 3s ease-in-out infinite;position:relative;display:inline-block}
+.hero-title .o::before,.hero-title .o::after{content:'Ω';position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
+.hero-title .o::before{animation:flame1 1.8s ease-in-out infinite;color:transparent;text-shadow:0 -8px 18px rgba(80,200,255,.9),0 -18px 36px rgba(40,160,255,.7),0 -30px 55px rgba(0,120,255,.5);filter:blur(2px);opacity:.8}
+.hero-title .o::after{animation:flame2 2.4s ease-in-out infinite .4s;color:transparent;text-shadow:0 -12px 24px rgba(120,220,255,.8),0 -24px 48px rgba(60,180,255,.5);filter:blur(3px);opacity:.6}
+@keyframes flame1{0%,100%{transform:scaleY(1) translateY(0);opacity:.8}50%{transform:scaleY(1.08) translateY(-4px);opacity:1}}
+@keyframes flame2{0%,100%{transform:scaleY(1) translateY(0) scaleX(1.02);opacity:.6}50%{transform:scaleY(1.12) translateY(-6px) scaleX(.98);opacity:.9}}
+@keyframes og{0%,100%{text-shadow:0 0 40px rgba(26,111,196,.9),0 0 80px rgba(26,111,196,.4),0 -6px 20px rgba(80,200,255,.6)}50%{text-shadow:0 0 65px rgba(26,111,196,1),0 0 120px rgba(26,111,196,.6),0 -10px 30px rgba(100,220,255,.9)}}
 .hero-sub{font-family:'Cinzel',serif;font-size:clamp(16px,3vw,30px);font-weight:400;color:rgba(240,244,255,.4);letter-spacing:8px;text-transform:uppercase;margin-bottom:30px;text-align:center;opacity:0;animation:fu .8s .6s forwards}
 .stripes{display:flex;flex-direction:column;gap:3px;width:180px;margin-bottom:30px;opacity:0;animation:fu .8s .7s forwards}
 .st{height:3px;border-radius:2px}.st.b{background:var(--b)}.st.w{background:rgba(240,244,255,.25)}
@@ -67,7 +72,7 @@ section{padding:88px 20px;position:relative}
 .st2{font-family:'Cinzel',serif;font-size:clamp(22px,4vw,42px);font-weight:700;color:var(--w);line-height:1.2}
 .st2 .hl{color:var(--bl)}
 .sl2{width:48px;height:2px;background:var(--b);margin:18px auto 0}
-.feat-s{background:var(--d2)}
+.feat-s{background:linear-gradient(160deg,#060c1a 0%,#081222 50%,#060e1e 100%)}
 .feat-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
 .fc{background:var(--d3);padding:34px 26px;position:relative;overflow:hidden;transition:all .4s;border:1px solid rgba(26,111,196,.07)}
 .fc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--b);transform:scaleX(0);transition:transform .4s}
@@ -77,7 +82,7 @@ section{padding:88px 20px;position:relative}
 .fc:hover .fc-icon{border-color:var(--bl);box-shadow:0 0 16px rgba(26,111,196,.3)}
 .fc-name{font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:var(--w);margin-bottom:9px;letter-spacing:.5px}
 .fc-desc{font-size:13px;color:rgba(240,244,255,.5);line-height:1.7}
-.oc-s{background:var(--d);overflow:hidden}
+.oc-s{background:linear-gradient(135deg,#050d1c 0%,#071428 50%,#050d1c 100%);overflow:hidden}
 .oc-s::after{content:'Ω';position:absolute;right:-50px;top:50%;transform:translateY(-50%);font-family:'Cinzel',serif;font-size:360px;color:rgba(26,111,196,.032);pointer-events:none;line-height:1}
 .oc-layout{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:68px;align-items:center}
 .coin-wrap{display:flex;justify-content:center}
@@ -95,7 +100,7 @@ section{padding:88px 20px;position:relative}
 .fact-ic{font-size:20px;flex-shrink:0;width:42px;height:42px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(26,111,196,.16)}
 .fact-t strong{display:block;font-family:'Cinzel',serif;font-size:12px;font-weight:700;color:var(--w);margin-bottom:3px}
 .fact-t span{font-size:12px;color:rgba(240,244,255,.5);line-height:1.5}
-.prot-s{background:var(--d2)}
+.prot-s{background:linear-gradient(160deg,#081220 0%,#0a1828 40%,#071018 100%)}
 .prot-layout{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
 .prot-visual{background:var(--d3);border:1px solid rgba(26,111,196,.2);overflow:hidden}
 .ptb{background:rgba(26,111,196,.1);padding:10px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(26,111,196,.16)}
@@ -116,7 +121,7 @@ section{padding:88px 20px;position:relative}
 .pf strong{display:block;font-family:'Cinzel',serif;font-size:12px;color:var(--w);margin-bottom:3px}
 .pf span{font-size:12px;color:rgba(240,244,255,.5);line-height:1.5}
 .ptag{display:inline-flex;align-items:center;gap:5px;background:rgba(26,111,196,.18);border:1px solid rgba(26,111,196,.38);padding:2px 9px;font-size:10px;font-weight:700;color:var(--bl);letter-spacing:1px;margin-top:5px}
-.prof-s{background:var(--d)}
+.prof-s{background:linear-gradient(180deg,#050c1a 0%,#060e1e 100%)}
 .prof-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .pc{background:var(--d3);border:1px solid rgba(26,111,196,.08);padding:24px 16px;text-align:center;transition:all .4s;position:relative;overflow:hidden;cursor:none}
 .pc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:0;background:linear-gradient(to top,rgba(26,111,196,.12),transparent);transition:height .4s}
@@ -170,7 +175,7 @@ section{padding:88px 20px;position:relative}
 .auct-foot{text-align:center;margin-top:20px;color:rgba(240,244,255,.35);font-size:11px;letter-spacing:2px;display:flex;align-items:center;justify-content:center;gap:7px}
 .ld{width:5px;height:5px;background:#22c55e;border-radius:50%;animation:sp 1.5s infinite;display:inline-block}
 .auct-note{text-align:center;margin-top:8px;font-size:10px;color:rgba(240,244,255,.22);letter-spacing:1px}
-.str-s{background:var(--d2)}
+.str-s{background:linear-gradient(160deg,#081220 0%,#0b1628 100%)}
 .str-grid{max-width:840px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .sc{background:var(--d3);border:1px solid rgba(26,111,196,.12);overflow:hidden;text-decoration:none;color:inherit;display:block;transition:all .4s}
 .sc:hover{border-color:rgba(26,111,196,.48);transform:translateY(-4px);box-shadow:0 16px 38px rgba(0,0,0,.4),0 0 36px rgba(26,111,196,.12)}
@@ -181,13 +186,13 @@ section{padding:88px 20px;position:relative}
 .sc-info{padding:16px}
 .sc-name{font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:var(--w);margin-bottom:4px}
 .sc-url{font-size:11px;color:var(--bl);letter-spacing:1px}
-.info-s{background:var(--d)}
+.info-s{background:linear-gradient(180deg,#070f1e 0%,#050c18 100%)}
 .info-grid{max-width:860px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
 .it{background:var(--d3);padding:26px 16px;text-align:center;border:1px solid rgba(26,111,196,.06);transition:all .3s}
 .it:hover{background:rgba(26,111,196,.06);border-color:rgba(26,111,196,.26)}
 .it-val{font-family:'Cinzel',serif;font-size:24px;font-weight:900;color:var(--bl);margin-bottom:6px}
 .it-lbl{font-size:9px;font-weight:700;letter-spacing:3px;color:rgba(240,244,255,.32);text-transform:uppercase}
-footer{background:var(--d2);border-top:1px solid rgba(26,111,196,.16);padding:52px 20px 34px;position:relative;overflow:hidden}
+footer{background:linear-gradient(180deg,#081220 0%,#050c18 100%);border-top:1px solid rgba(26,111,196,.16);padding:52px 20px 34px;position:relative;overflow:hidden}
 footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--b),transparent)}
 .foot-wrap{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
 .foot-logo{font-family:'Cinzel',serif;font-size:26px;font-weight:900;color:var(--w);margin-bottom:9px}
@@ -211,6 +216,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 </head>
 <body>
 <canvas id="omega-canvas"></canvas>
+
 <div id="cur"></div><div id="cur-ring"></div>
 <div id="rip"></div>
 <div class="toast" id="toast">✓ IP СКОПИРОВАН</div>
@@ -260,7 +266,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 <section class="feat-s" id="features"><div class="sep"></div>
   <div class="sh"><span class="se">Почему ΩmegaServer</span><h2 class="st2">Особенности <span class="hl">сервера</span></h2><div class="sl2"></div></div>
   <div class="feat-grid">
-    <div class="fc reveal"><div class="fc-num">01</div><div class="fc-icon">🏠</div><div class="fc-name">Приват регионов</div><div class="fc-desc">Ставишь блок — создаётся защищённый регион радиусом 5 блоков. Как на анархиях — никаких скучных чанков.</div></div>
+    <div class="fc reveal"><div class="fc-num">01</div><div class="fc-icon">🏠</div><div class="fc-name">Приват регионов</div><div class="fc-desc">Ставишь блок — создаётся защищённый регион. 3 тира: R-5 (бесплатно), R-16 (150 Ω), R-32 (500 Ω). Высота ±радиус от блока.</div></div>
     <div class="fc reveal"><div class="fc-num">02</div><div class="fc-icon">⚔️</div><div class="fc-name">PvP система</div><div class="fc-desc">В PvP теряешь вещи и 15 Ω — прямой перевод убийце. В PvE только 5% штраф. Защита новичков 45 минут.</div></div>
     <div class="fc reveal"><div class="fc-num">03</div><div class="fc-icon">💎</div><div class="fc-name">Без доната</div><div class="fc-desc">Никакого доната на преимущества. Всё заработано честно внутри игры.</div></div>
     <div class="fc reveal"><div class="fc-num">04</div><div class="fc-icon">🛡️</div><div class="fc-name">Античит GrimAC</div><div class="fc-desc">GrimAC блокирует читеров в реальном времени. Честная игра для всех.</div></div>
@@ -291,7 +297,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
   <div class="prot-layout" style="margin-bottom:52px">
     <div class="reveal">
       <div class="prot-visual">
-        <div class="ptb"><div class="ptb-dot" style="background:#ef4444"></div><div class="ptb-dot" style="background:#fbbf24"></div><div class="ptb-dot" style="background:#22c55e"></div><div class="ptb-title">REGION VISUALIZER — RADIUS 5</div></div>
+        <div class="ptb"><div class="ptb-dot" style="background:#ef4444"></div><div class="ptb-dot" style="background:#fbbf24"></div><div class="ptb-dot" style="background:#22c55e"></div><div class="ptb-title">REGION VISUALIZER — RADIUS 5 (SMALL BLOCK)</div></div>
         <div class="pgrid-wrap"><div class="pgrid" id="protGrid"></div>
         <div class="legend"><div class="leg"><div class="leg-d" style="background:rgba(26,111,196,.65)"></div>Блок привата</div><div class="leg"><div class="leg-d" style="background:rgba(26,111,196,.16)"></div>Защита</div><div class="leg"><div class="leg-d" style="background:rgba(255,255,255,.025)"></div>Открытая</div></div></div>
       </div>
@@ -300,13 +306,47 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
       <div class="sh" style="text-align:left;margin-bottom:22px"><span class="se">Как работает</span><h2 class="st2">Блоковый <span class="hl">приват</span></h2><div class="sl2" style="margin-left:0"></div></div>
       <div class="prot-facts">
         <div class="pf reveal"><strong>🧱 Поставь блок</strong><span>Разместь блок-приват — он станет центром защищённого региона.</span></div>
-        <div class="pf reveal"><strong>🖱️ GUI без команд</strong><span>Кликни по блоку — откроется меню. Добавляй участников, смотри прочность и управляй регионом прямо в GUI.</span></div>
-        <div class="pf reveal"><strong>⚔️ Прочность</strong><span>Враги могут атаковать блок — чем выше прочность, тем дольше продержится регион.</span></div>
-        <div class="pf reveal"><strong>👥 Добавить участника</strong><span>Кликни по своему блоку привата → в GUI выбери «Участники» → укажи ник игрока.</span></div>
+        <div class="pf reveal"><strong>⌨️ Управление через /ps</strong><span>Все действия — через команды в чате. Никакого GUI. Встань в свой регион и вводи <code style="color:var(--bl)">/ps add [ник]</code>, <code style="color:var(--bl)">/ps info</code> и т.д.</span></div>
+        <div class="pf reveal"><strong>⚔️ PvP и гриф разрешены!</strong><span>Сервер — гриферский. PvP работает везде. Можно взорвать блок привата ТНТ или сдвинуть поршнем — тогда регион снимается!</span></div>
+        <div class="pf reveal"><strong>👥 Добавить друга</strong><span>Зайди в свой регион → введи <code style="color:var(--bl)">/ps add [ник]</code> — игрок добавлен. Убрать: <code style="color:var(--bl)">/ps remove [ник]</code></span></div>
       </div>
     </div>
   </div>
 
+
+  <!-- Commands section -->
+  <div style="max-width:1000px;margin:0 auto 52px">
+    <div class="sh" style="margin-bottom:28px"><span class="se">Управление</span><h2 class="st2">Команды <span class="hl">привата</span></h2><div class="sl2"></div></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px">
+      <div style="background:var(--d3);border:1px solid rgba(26,111,196,.1);padding:18px;transition:all .3s" onmouseover="this.style.borderColor='rgba(26,111,196,.4)'" onmouseout="this.style.borderColor='rgba(26,111,196,.1)'">
+        <div style="font-size:10px;letter-spacing:3px;color:rgba(26,111,196,.6);margin-bottom:10px;font-weight:700">ПОЛУЧИТЬ БЛОК</div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="padding:8px 12px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ps get</code> <span style="color:rgba(240,244,255,.4);margin-left:8px">Меню покупки</span></div>
+          <div style="padding:8px 12px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ps get small</code> <span style="color:rgba(240,244,255,.4);margin-left:8px">Малый R-5 (FREE)</span></div>
+          <div style="padding:8px 12px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ps get medium</code> <span style="color:rgba(240,244,255,.4);margin-left:8px">Средний R-16 (150Ω)</span></div>
+          <div style="padding:8px 12px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ps get large</code> <span style="color:rgba(240,244,255,.4);margin-left:8px">Большой R-32 (500Ω)</span></div>
+        </div>
+      </div>
+      <div style="background:var(--d3);border:1px solid rgba(26,111,196,.1);padding:18px;transition:all .3s" onmouseover="this.style.borderColor='rgba(26,111,196,.4)'" onmouseout="this.style.borderColor='rgba(26,111,196,.1)'">
+        <div style="font-size:10px;letter-spacing:3px;color:rgba(26,111,196,.6);margin-bottom:10px;font-weight:700">УПРАВЛЕНИЕ</div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="padding:8px 12px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ps info</code> <span style="color:rgba(240,244,255,.4);margin-left:8px">Инфо о регионе</span></div>
+          <div style="padding:8px 12px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ps add [ник]</code> <span style="color:rgba(240,244,255,.4);margin-left:8px">Добавить игрока</span></div>
+          <div style="padding:8px 12px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ps remove [ник]</code> <span style="color:rgba(240,244,255,.4);margin-left:8px">Убрать игрока</span></div>
+          <div style="padding:8px 12px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ps home</code> <span style="color:rgba(240,244,255,.4);margin-left:8px">ТП к привату</span></div>
+        </div>
+      </div>
+      <div style="background:var(--d3);border:1px solid rgba(26,111,196,.1);padding:18px;transition:all .3s" onmouseover="this.style.borderColor='rgba(26,111,196,.4)'" onmouseout="this.style.borderColor='rgba(26,111,196,.1)'">
+        <div style="font-size:10px;letter-spacing:3px;color:rgba(26,111,196,.6);margin-bottom:10px;font-weight:700">ДОПОЛНИТЕЛЬНО</div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="padding:8px 12px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ps view</code> <span style="color:rgba(240,244,255,.4);margin-left:8px">Границы региона</span></div>
+          <div style="padding:8px 12px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ps list</code> <span style="color:rgba(240,244,255,.4);margin-left:8px">Мои регионы</span></div>
+          <div style="padding:8px 12px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ps name [имя]</code> <span style="color:rgba(240,244,255,.4);margin-left:8px">Название региона</span></div>
+          <div style="padding:8px 12px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ps unclaim</code> <span style="color:rgba(240,244,255,.4);margin-left:8px">Снять приват</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
   <!-- Block tiers table -->
   <div style="max-width:1000px;margin:0 auto">
     <div class="sh" style="margin-bottom:28px"><span class="se">Виды блоков</span><h2 class="st2">Тиры <span class="hl">регионов</span></h2><div class="sl2"></div></div>
@@ -315,89 +355,93 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
       <div style="padding:8px 0">
 
         <!-- Header -->
-        <div style="display:grid;grid-template-columns:44px 1fr 90px 90px 80px 90px;gap:10px;padding:10px 18px;font-size:9px;font-weight:700;letter-spacing:3px;color:rgba(240,244,255,.25);text-transform:uppercase;border-bottom:1px solid rgba(26,111,196,.12)">
-          <span></span><span>Блок</span><span style="text-align:center">Радиус</span><span style="text-align:center">Прочность</span><span style="text-align:center">Тир</span><span style="text-align:right">Цена</span>
+        <div style="display:grid;grid-template-columns:44px 1fr 110px 110px 90px;gap:10px;padding:10px 18px;font-size:9px;font-weight:700;letter-spacing:3px;color:rgba(240,244,255,.25);text-transform:uppercase;border-bottom:1px solid rgba(26,111,196,.12)">
+          <span></span><span>Блок привата</span><span style="text-align:center">Радиус</span><span style="text-align:center">Высота</span><span style="text-align:right">Цена Ω</span>
         </div>
 
-        <!-- Copper -->
-        <div style="display:grid;grid-template-columns:44px 1fr 90px 90px 80px 90px;gap:10px;align-items:center;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.03);transition:background .2s" onmouseover="this.style.background='rgba(26,111,196,.04)'" onmouseout="this.style.background=''">
-          <span style="font-size:24px;text-align:center">🟫</span>
+        <!-- Block 1: Small R-5 -->
+        <div style="display:grid;grid-template-columns:44px 1fr 110px 110px 90px;gap:10px;align-items:center;padding:16px 18px;border-bottom:1px solid rgba(255,255,255,.04);transition:background .2s" onmouseover="this.style.background='rgba(26,111,196,.05)'" onmouseout="this.style.background=''">
+          <span style="font-size:24px;text-align:center">🔵</span>
           <div>
-            <div style="font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:#e8a87c">Блок меди</div>
-            <div style="font-size:10px;color:rgba(240,244,255,.35);margin-top:2px">Стартовый · copper_block</div>
+            <div style="font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:#5b8dee">Лазуритовая руда</div>
+            <div style="font-size:10px;color:rgba(240,244,255,.35);margin-top:2px">Стартовый блок · /ps give small · alias: <code style="color:#5b8dee">small</code></div>
+            <div style="margin-top:6px;display:flex;gap:5px;flex-wrap:wrap">
+              <span style="background:rgba(26,111,196,.14);color:#7ab8f5;border:1px solid rgba(26,111,196,.3);padding:2px 7px;font-size:9px;font-weight:700;letter-spacing:1px">pvp deny</span>
+              <span style="background:rgba(26,111,196,.14);color:#7ab8f5;border:1px solid rgba(26,111,196,.3);padding:2px 7px;font-size:9px;font-weight:700;letter-spacing:1px">tnt deny</span>
+              <span style="background:rgba(26,111,196,.14);color:#7ab8f5;border:1px solid rgba(26,111,196,.3);padding:2px 7px;font-size:9px;font-weight:700;letter-spacing:1px">creeper deny</span>
+            </div>
           </div>
-          <div style="text-align:center;font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:var(--bl)">5</div>
           <div style="text-align:center">
-            <span style="display:inline-flex;gap:3px">⬛</span>
-            <span style="font-size:11px;color:rgba(240,244,255,.4)"> ×1</span>
+            <div style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:var(--bl)">5</div>
+            <div style="font-size:9px;color:rgba(240,244,255,.3);letter-spacing:1px">11×11 блоков</div>
           </div>
-          <div style="text-align:center"><span style="background:rgba(34,197,94,.1);color:#22c55e;border:1px solid rgba(34,197,94,.25);padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:1px">I</span></div>
-          <div style="text-align:right;font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:#22c55e">Бесплатно</div>
+          <div style="text-align:center">
+            <div style="font-family:'Cinzel',serif;font-size:16px;font-weight:700;color:var(--bl)">±5</div>
+            <div style="font-size:9px;color:rgba(240,244,255,.3);letter-spacing:1px">11 блоков высота</div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-family:'Cinzel',serif;font-size:16px;font-weight:700;color:#22c55e">FREE</div>
+            <div style="font-size:9px;color:rgba(34,197,94,.5);letter-spacing:1px">Выдаётся при входе</div>
+          </div>
         </div>
 
-        <!-- Iron -->
-        <div style="display:grid;grid-template-columns:44px 1fr 90px 90px 80px 90px;gap:10px;align-items:center;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.03);transition:background .2s" onmouseover="this.style.background='rgba(26,111,196,.04)'" onmouseout="this.style.background=''">
-          <span style="font-size:24px;text-align:center">⬜</span>
+        <!-- Block 2: Medium R-16 -->
+        <div style="display:grid;grid-template-columns:44px 1fr 110px 110px 90px;gap:10px;align-items:center;padding:16px 18px;border-bottom:1px solid rgba(255,255,255,.04);transition:background .2s" onmouseover="this.style.background='rgba(26,111,196,.05)'" onmouseout="this.style.background=''">
+          <span style="font-size:24px;text-align:center">💚</span>
           <div>
-            <div style="font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:#c8d8e8">Блок железа</div>
-            <div style="font-size:10px;color:rgba(240,244,255,.35);margin-top:2px">Средний · iron_block</div>
+            <div style="font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:#4ade80">Изумрудная руда</div>
+            <div style="font-size:10px;color:rgba(240,244,255,.35);margin-top:2px">Средний блок · /ps get medium · alias: <code style="color:#4ade80">medium</code></div>
+            <div style="margin-top:6px;display:flex;gap:5px;flex-wrap:wrap">
+              <span style="background:rgba(74,222,128,.1);color:#4ade80;border:1px solid rgba(74,222,128,.25);padding:2px 7px;font-size:9px;font-weight:700;letter-spacing:1px">pvp deny</span>
+              <span style="background:rgba(74,222,128,.1);color:#4ade80;border:1px solid rgba(74,222,128,.25);padding:2px 7px;font-size:9px;font-weight:700;letter-spacing:1px">fire deny</span>
+              <span style="background:rgba(74,222,128,.1);color:#4ade80;border:1px solid rgba(74,222,128,.25);padding:2px 7px;font-size:9px;font-weight:700;letter-spacing:1px">entry control</span>
+            </div>
           </div>
-          <div style="text-align:center;font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:var(--bl)">10</div>
           <div style="text-align:center">
-            <span style="font-size:11px;color:rgba(240,244,255,.4)">×3</span>
+            <div style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:var(--bl)">16</div>
+            <div style="font-size:9px;color:rgba(240,244,255,.3);letter-spacing:1px">33×33 блока</div>
           </div>
-          <div style="text-align:center"><span style="background:rgba(26,111,196,.12);color:#7ab8e8;border:1px solid rgba(26,111,196,.3);padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:1px">II</span></div>
-          <div style="text-align:right;font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:var(--bl)">75 Ω</div>
+          <div style="text-align:center">
+            <div style="font-family:'Cinzel',serif;font-size:16px;font-weight:700;color:var(--bl)">±16</div>
+            <div style="font-size:9px;color:rgba(240,244,255,.3);letter-spacing:1px">33 блока высота</div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-family:'Cinzel',serif;font-size:16px;font-weight:700;color:var(--bl)">150 Ω</div>
+            <div style="font-size:9px;color:rgba(26,111,196,.6);letter-spacing:1px">/ps get medium</div>
+          </div>
         </div>
 
-        <!-- Gold -->
-        <div style="display:grid;grid-template-columns:44px 1fr 90px 90px 80px 90px;gap:10px;align-items:center;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.03);transition:background .2s" onmouseover="this.style.background='rgba(26,111,196,.04)'" onmouseout="this.style.background=''">
-          <span style="font-size:24px;text-align:center">🟨</span>
+        <!-- Block 3: Large R-32 -->
+        <div style="display:grid;grid-template-columns:44px 1fr 110px 110px 90px;gap:10px;align-items:center;padding:16px 18px;transition:background .2s;position:relative;overflow:hidden" onmouseover="this.style.background='rgba(26,111,196,.07)'" onmouseout="this.style.background=''">
+          <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(26,111,196,.6),transparent)"></div>
+          <span style="font-size:24px;text-align:center">💎</span>
           <div>
-            <div style="font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:#f5c842">Блок золота</div>
-            <div style="font-size:10px;color:rgba(240,244,255,.35);margin-top:2px">Большой · gold_block</div>
+            <div style="font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:#60d4f7;display:flex;align-items:center;gap:7px">Алмазная руда <span style="background:rgba(26,111,196,.18);color:#60d4f7;border:1px solid rgba(26,111,196,.4);padding:1px 7px;font-size:9px;font-weight:700;letter-spacing:2px">👑 КОРОЛЬ</span></div>
+            <div style="font-size:10px;color:rgba(240,244,255,.35);margin-top:2px">Большой блок · /ps get large · alias: <code style="color:#60d4f7">large</code></div>
+            <div style="margin-top:6px;display:flex;gap:5px;flex-wrap:wrap">
+              <span style="background:rgba(96,212,247,.1);color:#60d4f7;border:1px solid rgba(96,212,247,.25);padding:2px 7px;font-size:9px;font-weight:700;letter-spacing:1px">pvp deny</span>
+              <span style="background:rgba(96,212,247,.1);color:#60d4f7;border:1px solid rgba(96,212,247,.25);padding:2px 7px;font-size:9px;font-weight:700;letter-spacing:1px">lava deny</span>
+              <span style="background:rgba(96,212,247,.1);color:#60d4f7;border:1px solid rgba(96,212,247,.25);padding:2px 7px;font-size:9px;font-weight:700;letter-spacing:1px">water deny</span>
+              <span style="background:rgba(96,212,247,.1);color:#60d4f7;border:1px solid rgba(96,212,247,.25);padding:2px 7px;font-size:9px;font-weight:700;letter-spacing:1px">fire deny</span>
+            </div>
           </div>
-          <div style="text-align:center;font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:var(--bl)">15</div>
           <div style="text-align:center">
-            <span style="font-size:11px;color:rgba(240,244,255,.4)">×5</span>
+            <div style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:var(--bl)">32</div>
+            <div style="font-size:9px;color:rgba(240,244,255,.3);letter-spacing:1px">65×65 блоков</div>
           </div>
-          <div style="text-align:center"><span style="background:rgba(245,200,66,.1);color:#f5c842;border:1px solid rgba(245,200,66,.3);padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:1px">III</span></div>
-          <div style="text-align:right;font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:#f5c842">250 Ω</div>
-        </div>
-
-        <!-- Diamond -->
-        <div style="display:grid;grid-template-columns:44px 1fr 90px 90px 80px 90px;gap:10px;align-items:center;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.03);transition:background .2s" onmouseover="this.style.background='rgba(26,111,196,.04)'" onmouseout="this.style.background=''">
-          <span style="font-size:24px;text-align:center">🔷</span>
-          <div>
-            <div style="font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:#5de8e8">Блок алмаза</div>
-            <div style="font-size:10px;color:rgba(240,244,255,.35);margin-top:2px">Огромный · diamond_block</div>
-          </div>
-          <div style="text-align:center;font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:var(--bl)">25</div>
           <div style="text-align:center">
-            <span style="font-size:11px;color:rgba(240,244,255,.4)">×10</span>
+            <div style="font-family:'Cinzel',serif;font-size:16px;font-weight:700;color:#60d4f7">±32</div>
+            <div style="font-size:9px;color:rgba(240,244,255,.3);letter-spacing:1px">65 блоков высота</div>
           </div>
-          <div style="text-align:center"><span style="background:rgba(93,232,232,.1);color:#5de8e8;border:1px solid rgba(93,232,232,.3);padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:1px">IV</span></div>
-          <div style="text-align:right;font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:#5de8e8">700 Ω</div>
-        </div>
-
-        <!-- Netherite -->
-        <div style="display:grid;grid-template-columns:44px 1fr 90px 90px 80px 90px;gap:10px;align-items:center;padding:14px 18px;transition:background .2s" onmouseover="this.style.background='rgba(26,111,196,.04)'" onmouseout="this.style.background=''">
-          <span style="font-size:24px;text-align:center">⬛</span>
-          <div>
-            <div style="font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:#c8a8e8">Блок незерита</div>
-            <div style="font-size:10px;color:rgba(240,244,255,.35);margin-top:2px">Мега · netherite_block</div>
+          <div style="text-align:right">
+            <div style="font-family:'Cinzel',serif;font-size:16px;font-weight:700;color:#60d4f7">500 Ω</div>
+            <div style="font-size:9px;color:rgba(96,212,247,.5);letter-spacing:1px">/ps get large</div>
           </div>
-          <div style="text-align:center;font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:var(--bl)">40</div>
-          <div style="text-align:center">
-            <span style="font-size:11px;color:rgba(240,244,255,.4)">×20</span>
-          </div>
-          <div style="text-align:center"><span style="background:rgba(138,111,168,.15);color:#c8a8e8;border:1px solid rgba(138,111,168,.4);padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:1px">V</span></div>
-          <div style="text-align:right;font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:#c8a8e8">2000 Ω</div>
         </div>
 
       </div>
       <div style="padding:12px 18px;background:rgba(26,111,196,.04);border-top:1px solid rgba(26,111,196,.1);font-size:10px;color:rgba(240,244,255,.28);letter-spacing:2px;text-align:center">
-        БЛОКИ КЛАДУТСЯ В МИР · GUI ОТКРЫВАЕТСЯ КЛИКОМ · УПРАВЛЕНИЕ БЕЗ КОМАНД
+        БЛОКИ КЛАДУТСЯ В МИР · КОМАНДЫ: /ps get [small|medium|large] · УПРАВЛЕНИЕ: /ps info
       </div>
     </div>
   </div>
@@ -423,7 +467,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 
 
 
-<section style="background:var(--d2)" id="clans"><div class="sep"></div>
+<section style="background:linear-gradient(150deg,#081220 0%,#0a1728 50%,#070f1c 100%)" id="clans"><div class="sep"></div>
   <div class="sh"><span class="se">Война и союзы</span><h2 class="st2">Система <span class="hl">кланов</span></h2><div class="sl2"></div></div>
   <div class="prot-layout">
     <div>
@@ -466,7 +510,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
   </div>
 </section>
 
-<section style="background:var(--d)" id="auction"><div class="sep"></div>
+<section style="background:linear-gradient(160deg,#050d1a 0%,#071422 50%,#050c18 100%)" id="auction"><div class="sep"></div>
   <div class="sh"><span class="se">Торговля между игроками</span><h2 class="st2">Игровой <span class="hl">аукцион</span></h2><div class="sl2"></div></div>
   <div class="prot-layout">
     <div>
@@ -543,7 +587,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 
 <section class="info-s"><div class="sep"></div>
   <div class="info-grid">
-    <div class="it reveal"><div class="it-val">1.21</div><div class="it-lbl">Java Edition</div></div>
+    <div class="it reveal"><div class="it-val">1.21.10</div><div class="it-lbl">Java Edition</div></div>
     <div class="it reveal"><div class="it-val">50</div><div class="it-lbl">Слотов</div></div>
     <div class="it reveal"><div class="it-val">50 Ω</div><div class="it-lbl">Старт</div></div>
     <div class="it reveal"><div class="it-val">0₽</div><div class="it-lbl">Донат</div></div>
@@ -570,41 +614,81 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 </div>
 
 <script>
-// ── FLYING OMEGAS ────────────────────────────────────
+// aurora removed
+
+// ── SHOOTING STARS ───────────────────────────────────
 const canvas=document.getElementById('omega-canvas');
 const ctx2=canvas.getContext('2d');
-let W,H,omegas=[],mouse={x:-999,y:-999};
+let W,H;
 function resize(){W=canvas.width=innerWidth;H=canvas.height=innerHeight}
 resize();window.addEventListener('resize',resize);
-document.addEventListener('mousemove',e=>{mouse.x=e.clientX;mouse.y=e.clientY});
 
+// Stars background
+const stars=[];
+for(let i=0;i<180;i++){
+  stars.push({x:Math.random(),y:Math.random(),r:Math.random()*1.2+.2,a:Math.random()*.8+.1,tw:Math.random()*3+1,tp:Math.random()*Math.PI*2});
+}
+
+// Shooting stars
+class Shoot{
+  constructor(){this.reset()}
+  reset(){
+    this.x=Math.random()*W*1.2;
+    this.y=-10;
+    this.len=80+Math.random()*120;
+    this.speed=8+Math.random()*14;
+    this.angle=Math.PI/4+Math.random()*.3;
+    this.a=0;this.alive=true;
+    this.delay=Math.random()*4000;
+    this.born=Date.now()+this.delay;
+  }
+  update(){
+    if(Date.now()<this.born)return;
+    this.x+=Math.cos(this.angle)*this.speed;
+    this.y+=Math.sin(this.angle)*this.speed;
+    this.a=Math.min(1,(Date.now()-this.born)/200);
+    if(this.x>W+200||this.y>H+200)this.reset();
+  }
+  draw(){
+    if(Date.now()<this.born)return;
+    const tail={x:this.x-Math.cos(this.angle)*this.len,y:this.y-Math.sin(this.angle)*this.len};
+    const g=ctx2.createLinearGradient(tail.x,tail.y,this.x,this.y);
+    g.addColorStop(0,'rgba(42,143,228,0)');
+    g.addColorStop(.7,'rgba(42,143,228,'+(this.a*.6)+')');
+    g.addColorStop(1,'rgba(180,220,255,'+(this.a*.9)+')');
+    ctx2.beginPath();ctx2.moveTo(tail.x,tail.y);ctx2.lineTo(this.x,this.y);
+    ctx2.strokeStyle=g;ctx2.lineWidth=1.5;ctx2.stroke();
+    ctx2.beginPath();ctx2.arc(this.x,this.y,2,0,Math.PI*2);
+    ctx2.fillStyle='rgba(180,220,255,'+(this.a*.8)+')';ctx2.fill();
+  }
+}
+const shoots=Array.from({length:6},()=>new Shoot());
+
+// Flying Omegas
+let mouse={x:-999,y:-999};
+document.addEventListener('mousemove',e=>{mouse.x=e.clientX;mouse.y=e.clientY});
 class Omega{
   constructor(){this.reset(true)}
   reset(init=false){
     this.x=Math.random()*W;
     this.y=init?Math.random()*H:H+50;
-    this.size=14+Math.random()*28;
-    this.vx=(Math.random()-.5)*.45;
-    this.vy=-(0.25+Math.random()*.55);
-    this.a=0.03+Math.random()*.065;
+    this.size=10+Math.random()*24;
+    this.vx=(Math.random()-.5)*.4;
+    this.vy=-(0.2+Math.random()*.5);
+    this.a=0.02+Math.random()*.055;
     this.ca=this.a;this.ta=this.a;
     this.fvx=0;this.fvy=0;
     this.rot=Math.random()*Math.PI*2;
-    this.rs=(Math.random()-.5)*.008;
+    this.rs=(Math.random()-.5)*.007;
   }
   update(){
     const dx=this.x-mouse.x,dy=this.y-mouse.y;
-    const dist=Math.sqrt(dx*dx+dy*dy);
-    const fr=130;
-    if(dist<fr&&dist>0){
-      const f=(fr-dist)/fr;
-      this.fvx+=(dx/dist)*f*4;
-      this.fvy+=(dy/dist)*f*4;
-      this.ta=Math.min(0.2,this.a*3);
-    } else {
-      this.fvx*=.85;this.fvy*=.85;
-      this.ta=this.a;
-    }
+    const dist=Math.hypot(dx,dy);
+    if(dist<140&&dist>0){
+      const f=(140-dist)/140;
+      this.fvx+=(dx/dist)*f*3.5;this.fvy+=(dy/dist)*f*3.5;
+      this.ta=Math.min(.18,this.a*3);
+    }else{this.fvx*=.84;this.fvy*=.84;this.ta=this.a;}
     this.x+=this.vx+this.fvx;this.y+=this.vy+this.fvy;
     this.rot+=this.rs;
     this.ca+=(this.ta-this.ca)*.1;
@@ -618,8 +702,24 @@ class Omega{
     ctx2.fillText('Ω',0,0);ctx2.restore();
   }
 }
-for(let i=0;i<28;i++)omegas.push(new Omega());
-function animO(){ctx2.clearRect(0,0,W,H);omegas.forEach(o=>{o.update();o.draw()});requestAnimationFrame(animO)}
+const omegas=Array.from({length:25},()=>new Omega());
+
+let stT=0;
+function animO(){
+  ctx2.clearRect(0,0,W,H);
+  // Stars
+  stT+=.005;
+  stars.forEach(s=>{
+    const tw=Math.sin(stT*s.tw+s.tp)*.4+.6;
+    ctx2.beginPath();ctx2.arc(s.x*W,s.y*H,s.r,0,Math.PI*2);
+    ctx2.fillStyle=`rgba(180,210,255,${s.a*tw})`;ctx2.fill();
+  });
+  // Shooting stars
+  shoots.forEach(s=>{s.update();s.draw()});
+  // Omegas
+  omegas.forEach(o=>{o.update();o.draw()});
+  requestAnimationFrame(animO);
+}
 animO();
 
 // ── CURSOR ───────────────────────────────────────────
@@ -628,25 +728,48 @@ let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
 function animR(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animR)}animR();
 document.querySelectorAll('a,button,[onclick],.fc,.pc,.sc,.fact,.cf,.pf,.it').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cur.style.transform='translate(-50%,-50%) scale(2.2)';ring.style.width='46px';ring.style.height='46px';ring.style.borderColor='rgba(26,111,196,.8)'});
+  el.addEventListener('mouseenter',()=>{cur.style.transform='translate(-50%,-50%) scale(2.2)';ring.style.width='46px';ring.style.height='46px';ring.style.borderColor='rgba(26,111,196,.9)'});
   el.addEventListener('mouseleave',()=>{cur.style.transform='translate(-50%,-50%) scale(1)';ring.style.width='34px';ring.style.height='34px';ring.style.borderColor='rgba(26,111,196,.5)'});
 });
 
 // ── RIPPLE ───────────────────────────────────────────
 document.addEventListener('click',e=>{
   const r=document.getElementById('rip');
-  const d=document.createElement('div');d.className='ripple';
-  d.style.cssText=`left:${e.clientX}px;top:${e.clientY}px;width:50px;height:50px`;
-  r.appendChild(d);setTimeout(()=>d.remove(),800);playC();
+  for(let i=0;i<3;i++){
+    const d=document.createElement('div');d.className='ripple';
+    const s=30+i*20;
+    d.style.cssText=`left:${e.clientX}px;top:${e.clientY}px;width:${s}px;height:${s}px;animation-delay:${i*0.08}s`;
+    r.appendChild(d);setTimeout(()=>d.remove(),900+i*80);
+  }
+  playC();
 });
 
-// ── SOUND ────────────────────────────────────────────
+// ── ADVANCED SOUND ENGINE ────────────────────────────
 let ax;
 function gac(){if(!ax)ax=new(window.AudioContext||window.webkitAudioContext)();return ax}
-function tone(f,d,v=.08){try{const c=gac(),o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.type='sine';o.frequency.setValueAtTime(f,c.currentTime);o.frequency.exponentialRampToValueAtTime(f*.65,c.currentTime+d);g.gain.setValueAtTime(v,c.currentTime);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+d);o.start(c.currentTime);o.stop(c.currentTime+d)}catch(e){}}
-function playC(){tone(880,.12,.1)}
-function playH(){tone(660,.06,.03)}
+function tone(f,d,v=.07,type='sine'){
+  try{
+    const c=gac(),o=c.createOscillator(),g=c.createGain(),rev=c.createGain();
+    o.connect(g);g.connect(c.destination);
+    o.type=type;o.frequency.setValueAtTime(f,c.currentTime);
+    o.frequency.exponentialRampToValueAtTime(f*.7,c.currentTime+d);
+    g.gain.setValueAtTime(v,c.currentTime);
+    g.gain.exponentialRampToValueAtTime(.001,c.currentTime+d);
+    o.start(c.currentTime);o.stop(c.currentTime+d+.05);
+  }catch(e){}
+}
+function playC(){
+  tone(880,.06,.09);
+  setTimeout(()=>tone(1100,.08,.07),60);
+  setTimeout(()=>tone(1320,.12,.05),130);
+}
+function playH(){tone(660,.05,.025,'triangle')}
+function playNav(){tone(440,.04,.03);setTimeout(()=>tone(550,.06,.02),50)}
+function playIP(){
+  [880,1100,1320,1760].forEach((f,i)=>setTimeout(()=>tone(f,.1,.08),i*55));
+}
 document.querySelectorAll('.fc,.pc,.sc,.fact,.cf,.pf').forEach(el=>el.addEventListener('mouseenter',playH));
+document.querySelectorAll('.nav-links a').forEach(el=>el.addEventListener('click',playNav));
 
 // ── COPY IP ──────────────────────────────────────────
 function copyIP(){
@@ -656,11 +779,11 @@ function copyIP(){
     el.textContent='✓ СКОПИРОВАНО!';el.style.color='#22c55e';
     setTimeout(()=>{el.textContent=old;el.style.color=''},2500);
     const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);
-    tone(880,.04);setTimeout(()=>tone(1100,.08),55);
+    playIP();
   });
 }
 
-// ── STATUS ───────────────────────────────────────────
+// ── SERVER STATUS ────────────────────────────────────
 async function checkStatus(){
   try{
     const r=await fetch('https://api.mcstatus.io/v2/status/java/185.9.145.89:32509');
@@ -688,15 +811,79 @@ function buildGrid(){
   }
 }
 buildGrid();
+let pgWave=0;
 setInterval(()=>{
+  pgWave++;
   document.querySelectorAll('.cell.protected').forEach((c,i)=>{
-    setTimeout(()=>{c.style.background='rgba(26,111,196,.36)';setTimeout(()=>c.style.background='rgba(26,111,196,.16)',180)},i*12);
+    setTimeout(()=>{
+      c.style.background='rgba(42,143,228,.42)';
+      c.style.boxShadow='0 0 6px rgba(26,111,196,.5)';
+      setTimeout(()=>{c.style.background='rgba(26,111,196,.16)';c.style.boxShadow=''},220);
+    },i*10);
   });
-},4500);
+},3500);
 
-// ── SCROLL REVEAL ────────────────────────────────────
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.08});
-document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%5)*.065+'s';obs.observe(el)});
+// ── SCROLL REVEAL WITH PARALLAX ──────────────────────
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      // play subtle sound when section enters view
+      if(e.target.tagName==='SECTION'||e.target.closest('section')){
+        setTimeout(()=>tone(330,.15,.015,'sine'),100);
+      }
+    }
+  });
+},{threshold:.06});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%5)*.07+'s';obs.observe(el)});
+
+// ── SECTION GLOW ON SCROLL ───────────────────────────
+const secObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.style.setProperty('--sec-glow','rgba(26,111,196,.04)');
+    }
+  });
+},{threshold:.1});
+document.querySelectorAll('section').forEach(s=>secObs.observe(s));
+
+// ── TYPEWRITER for eyebrow ───────────────────────────
+const eyeEl=document.querySelector('.eyebrow');
+if(eyeEl){
+  const txt=eyeEl.textContent;
+  eyeEl.textContent='';
+  let ti=0;
+  const tw=setInterval(()=>{
+    eyeEl.textContent+=txt[ti++];
+    if(ti>=txt.length)clearInterval(tw);
+  },40);
+}
+
+// ── COUNTER ANIMATION for stats ──────────────────────
+function animCount(el,target,suffix=''){
+  let cur=0;const dur=1800;const step=dur/60;
+  const inc=target/60;
+  const t=setInterval(()=>{
+    cur=Math.min(cur+inc,target);
+    el.textContent=Math.floor(cur)+(suffix||'');
+    if(cur>=target)clearInterval(t);
+  },step);
+}
+const statObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const v=e.target.querySelector('.it-val');
+      if(v&&!v.dataset.counted){
+        v.dataset.counted='1';
+        const raw=v.textContent.trim();
+        const num=parseFloat(raw);
+        const suf=raw.replace(/[\d.]/g,'');
+        if(!isNaN(num))animCount(v,num,suf);
+      }
+    }
+  });
+},{threshold:.5});
+document.querySelectorAll('.it').forEach(el=>statObs.observe(el));
 </script>
 </body>
 </html>
