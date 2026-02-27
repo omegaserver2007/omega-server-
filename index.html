@@ -35,11 +35,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .hero-title{font-family:'Cinzel',serif;font-size:clamp(56px,11vw,120px);font-weight:900;line-height:.9;text-align:center;margin-bottom:8px;opacity:0;animation:fu .8s .4s forwards}
 .hero-title .o{color:var(--bl);text-shadow:0 0 40px rgba(26,111,196,.9),0 0 80px rgba(26,111,196,.4);animation:og 3s ease-in-out infinite;position:relative;display:inline-block}
 .hero-title .o::before,.hero-title .o::after{content:'Ω';position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
-.hero-title .o::before{animation:flame1 1.8s ease-in-out infinite;color:transparent;text-shadow:0 -8px 18px rgba(80,200,255,.9),0 -18px 36px rgba(40,160,255,.7),0 -30px 55px rgba(0,120,255,.5);filter:blur(2px);opacity:.8}
-.hero-title .o::after{animation:flame2 2.4s ease-in-out infinite .4s;color:transparent;text-shadow:0 -12px 24px rgba(120,220,255,.8),0 -24px 48px rgba(60,180,255,.5);filter:blur(3px);opacity:.6}
-@keyframes flame1{0%,100%{transform:scaleY(1) translateY(0);opacity:.8}50%{transform:scaleY(1.08) translateY(-4px);opacity:1}}
-@keyframes flame2{0%,100%{transform:scaleY(1) translateY(0) scaleX(1.02);opacity:.6}50%{transform:scaleY(1.12) translateY(-6px) scaleX(.98);opacity:.9}}
-@keyframes og{0%,100%{text-shadow:0 0 40px rgba(26,111,196,.9),0 0 80px rgba(26,111,196,.4),0 -6px 20px rgba(80,200,255,.6)}50%{text-shadow:0 0 65px rgba(26,111,196,1),0 0 120px rgba(26,111,196,.6),0 -10px 30px rgba(100,220,255,.9)}}
+.hero-title .o::before{animation:flame1 2.2s ease-in-out infinite;color:transparent;text-shadow:0 -6px 14px rgba(42,143,228,.35),0 -14px 28px rgba(26,111,196,.2),0 -24px 40px rgba(13,74,138,.12);filter:blur(3px);opacity:.7}
+.hero-title .o::after{animation:flame2 3s ease-in-out infinite .6s;color:transparent;text-shadow:0 -8px 20px rgba(60,160,240,.25),0 -20px 38px rgba(26,111,196,.15);filter:blur(5px);opacity:.5}
+@keyframes flame1{0%,100%{transform:scaleY(1) translateY(0);opacity:.6}50%{transform:scaleY(1.06) translateY(-3px);opacity:.8}}
+@keyframes flame2{0%,100%{transform:scaleY(1) translateY(0);opacity:.4}50%{transform:scaleY(1.1) translateY(-5px);opacity:.65}}
+@keyframes og{0%,100%{text-shadow:0 0 30px rgba(26,111,196,.7),0 0 60px rgba(26,111,196,.25)}50%{text-shadow:0 0 45px rgba(42,143,228,.85),0 0 90px rgba(26,111,196,.35)}}
 .hero-sub{font-family:'Cinzel',serif;font-size:clamp(16px,3vw,30px);font-weight:400;color:rgba(240,244,255,.4);letter-spacing:8px;text-transform:uppercase;margin-bottom:30px;text-align:center;opacity:0;animation:fu .8s .6s forwards}
 .stripes{display:flex;flex-direction:column;gap:3px;width:180px;margin-bottom:30px;opacity:0;animation:fu .8s .7s forwards}
 .st{height:3px;border-radius:2px}.st.b{background:var(--b)}.st.w{background:rgba(240,244,255,.25)}
