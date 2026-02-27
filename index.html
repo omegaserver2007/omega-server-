@@ -286,7 +286,9 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 
 <section class="prot-s" id="protection"><div class="sep"></div>
   <div class="sh"><span class="se">Защита территории</span><h2 class="st2">Приват <span class="hl">регионов</span></h2><div class="sl2"></div></div>
-  <div class="prot-layout">
+
+  <!-- How it works -->
+  <div class="prot-layout" style="margin-bottom:52px">
     <div class="reveal">
       <div class="prot-visual">
         <div class="ptb"><div class="ptb-dot" style="background:#ef4444"></div><div class="ptb-dot" style="background:#fbbf24"></div><div class="ptb-dot" style="background:#22c55e"></div><div class="ptb-title">REGION VISUALIZER — RADIUS 5</div></div>
@@ -297,14 +299,109 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
     <div>
       <div class="sh" style="text-align:left;margin-bottom:22px"><span class="se">Как работает</span><h2 class="st2">Блоковый <span class="hl">приват</span></h2><div class="sl2" style="margin-left:0"></div></div>
       <div class="prot-facts">
-        <div class="pf reveal"><strong>🧱 Поставь блок</strong><span>Разместить специальный блок-приват — он станет центром защищённого региона.</span></div>
-        <div class="pf reveal"><strong>📐 Радиус 5 блоков</strong><span>Вокруг блока создаётся зона 5×5 во все стороны — защищена полностью.</span></div>
-        <div class="pf reveal"><strong>⚔️ Прочность</strong><span>Враги могут атаковать блок. Чем выше прочность — тем дольше продержится.</span></div>
-        <div class="pf reveal"><strong>💰 Стоимость</strong><span>Каждый регион требует оплату в Ω.</span><div style="margin-top:7px;display:flex;gap:7px;flex-wrap:wrap"><div class="ptag">Базовый · 10 Ω</div><div class="ptag">Улучшенный · 5% баланса</div></div></div>
-        <div class="pf reveal"><strong>👥 Добавить участника</strong><span>Кликни по блоку привата — откроется меню региона. Там можно добавить доверенного игрока через GUI.</span></div>
+        <div class="pf reveal"><strong>🧱 Поставь блок</strong><span>Разместь блок-приват — он станет центром защищённого региона.</span></div>
+        <div class="pf reveal"><strong>🖱️ GUI без команд</strong><span>Кликни по блоку — откроется меню. Добавляй участников, смотри прочность и управляй регионом прямо в GUI.</span></div>
+        <div class="pf reveal"><strong>⚔️ Прочность</strong><span>Враги могут атаковать блок — чем выше прочность, тем дольше продержится регион.</span></div>
+        <div class="pf reveal"><strong>👥 Добавить участника</strong><span>Кликни по своему блоку привата → в GUI выбери «Участники» → укажи ник игрока.</span></div>
       </div>
     </div>
   </div>
+
+  <!-- Block tiers table -->
+  <div style="max-width:1000px;margin:0 auto">
+    <div class="sh" style="margin-bottom:28px"><span class="se">Виды блоков</span><h2 class="st2">Тиры <span class="hl">регионов</span></h2><div class="sl2"></div></div>
+    <div class="prot-visual reveal" style="overflow:visible">
+      <div class="ptb"><div class="ptb-dot" style="background:#ef4444"></div><div class="ptb-dot" style="background:#fbbf24"></div><div class="ptb-dot" style="background:#22c55e"></div><div class="ptb-title">PROTECTION BLOCKS — TIER LIST</div></div>
+      <div style="padding:8px 0">
+
+        <!-- Header -->
+        <div style="display:grid;grid-template-columns:44px 1fr 90px 90px 80px 90px;gap:10px;padding:10px 18px;font-size:9px;font-weight:700;letter-spacing:3px;color:rgba(240,244,255,.25);text-transform:uppercase;border-bottom:1px solid rgba(26,111,196,.12)">
+          <span></span><span>Блок</span><span style="text-align:center">Радиус</span><span style="text-align:center">Прочность</span><span style="text-align:center">Тир</span><span style="text-align:right">Цена</span>
+        </div>
+
+        <!-- Copper -->
+        <div style="display:grid;grid-template-columns:44px 1fr 90px 90px 80px 90px;gap:10px;align-items:center;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.03);transition:background .2s" onmouseover="this.style.background='rgba(26,111,196,.04)'" onmouseout="this.style.background=''">
+          <span style="font-size:24px;text-align:center">🟫</span>
+          <div>
+            <div style="font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:#e8a87c">Блок меди</div>
+            <div style="font-size:10px;color:rgba(240,244,255,.35);margin-top:2px">Стартовый · copper_block</div>
+          </div>
+          <div style="text-align:center;font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:var(--bl)">5</div>
+          <div style="text-align:center">
+            <span style="display:inline-flex;gap:3px">⬛</span>
+            <span style="font-size:11px;color:rgba(240,244,255,.4)"> ×1</span>
+          </div>
+          <div style="text-align:center"><span style="background:rgba(34,197,94,.1);color:#22c55e;border:1px solid rgba(34,197,94,.25);padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:1px">I</span></div>
+          <div style="text-align:right;font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:#22c55e">Бесплатно</div>
+        </div>
+
+        <!-- Iron -->
+        <div style="display:grid;grid-template-columns:44px 1fr 90px 90px 80px 90px;gap:10px;align-items:center;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.03);transition:background .2s" onmouseover="this.style.background='rgba(26,111,196,.04)'" onmouseout="this.style.background=''">
+          <span style="font-size:24px;text-align:center">⬜</span>
+          <div>
+            <div style="font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:#c8d8e8">Блок железа</div>
+            <div style="font-size:10px;color:rgba(240,244,255,.35);margin-top:2px">Средний · iron_block</div>
+          </div>
+          <div style="text-align:center;font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:var(--bl)">10</div>
+          <div style="text-align:center">
+            <span style="font-size:11px;color:rgba(240,244,255,.4)">×3</span>
+          </div>
+          <div style="text-align:center"><span style="background:rgba(26,111,196,.12);color:#7ab8e8;border:1px solid rgba(26,111,196,.3);padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:1px">II</span></div>
+          <div style="text-align:right;font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:var(--bl)">75 Ω</div>
+        </div>
+
+        <!-- Gold -->
+        <div style="display:grid;grid-template-columns:44px 1fr 90px 90px 80px 90px;gap:10px;align-items:center;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.03);transition:background .2s" onmouseover="this.style.background='rgba(26,111,196,.04)'" onmouseout="this.style.background=''">
+          <span style="font-size:24px;text-align:center">🟨</span>
+          <div>
+            <div style="font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:#f5c842">Блок золота</div>
+            <div style="font-size:10px;color:rgba(240,244,255,.35);margin-top:2px">Большой · gold_block</div>
+          </div>
+          <div style="text-align:center;font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:var(--bl)">15</div>
+          <div style="text-align:center">
+            <span style="font-size:11px;color:rgba(240,244,255,.4)">×5</span>
+          </div>
+          <div style="text-align:center"><span style="background:rgba(245,200,66,.1);color:#f5c842;border:1px solid rgba(245,200,66,.3);padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:1px">III</span></div>
+          <div style="text-align:right;font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:#f5c842">250 Ω</div>
+        </div>
+
+        <!-- Diamond -->
+        <div style="display:grid;grid-template-columns:44px 1fr 90px 90px 80px 90px;gap:10px;align-items:center;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.03);transition:background .2s" onmouseover="this.style.background='rgba(26,111,196,.04)'" onmouseout="this.style.background=''">
+          <span style="font-size:24px;text-align:center">🔷</span>
+          <div>
+            <div style="font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:#5de8e8">Блок алмаза</div>
+            <div style="font-size:10px;color:rgba(240,244,255,.35);margin-top:2px">Огромный · diamond_block</div>
+          </div>
+          <div style="text-align:center;font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:var(--bl)">25</div>
+          <div style="text-align:center">
+            <span style="font-size:11px;color:rgba(240,244,255,.4)">×10</span>
+          </div>
+          <div style="text-align:center"><span style="background:rgba(93,232,232,.1);color:#5de8e8;border:1px solid rgba(93,232,232,.3);padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:1px">IV</span></div>
+          <div style="text-align:right;font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:#5de8e8">700 Ω</div>
+        </div>
+
+        <!-- Netherite -->
+        <div style="display:grid;grid-template-columns:44px 1fr 90px 90px 80px 90px;gap:10px;align-items:center;padding:14px 18px;transition:background .2s" onmouseover="this.style.background='rgba(26,111,196,.04)'" onmouseout="this.style.background=''">
+          <span style="font-size:24px;text-align:center">⬛</span>
+          <div>
+            <div style="font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:#c8a8e8">Блок незерита</div>
+            <div style="font-size:10px;color:rgba(240,244,255,.35);margin-top:2px">Мега · netherite_block</div>
+          </div>
+          <div style="text-align:center;font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:var(--bl)">40</div>
+          <div style="text-align:center">
+            <span style="font-size:11px;color:rgba(240,244,255,.4)">×20</span>
+          </div>
+          <div style="text-align:center"><span style="background:rgba(138,111,168,.15);color:#c8a8e8;border:1px solid rgba(138,111,168,.4);padding:2px 8px;font-size:9px;font-weight:700;letter-spacing:1px">V</span></div>
+          <div style="text-align:right;font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:#c8a8e8">2000 Ω</div>
+        </div>
+
+      </div>
+      <div style="padding:12px 18px;background:rgba(26,111,196,.04);border-top:1px solid rgba(26,111,196,.1);font-size:10px;color:rgba(240,244,255,.28);letter-spacing:2px;text-align:center">
+        БЛОКИ КЛАДУТСЯ В МИР · GUI ОТКРЫВАЕТСЯ КЛИКОМ · УПРАВЛЕНИЕ БЕЗ КОМАНД
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <section class="prof-s" id="professions"><div class="sep"></div>
