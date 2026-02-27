@@ -209,9 +209,103 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 #rip{position:fixed;inset:0;pointer-events:none;z-index:7500}
 .ripple{position:absolute;border-radius:50%;border:1px solid rgba(26,111,196,.35);transform:translate(-50%,-50%) scale(0);animation:ra .8s ease-out forwards}
 @keyframes ra{0%{transform:translate(-50%,-50%) scale(0);opacity:.6}100%{transform:translate(-50%,-50%) scale(4);opacity:0}}
+/* ── BURGER ──────────────────────────────────────────── */
+.nav-right{display:flex;align-items:center;gap:12px}
+.burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:rgba(26,111,196,.12);border:1px solid rgba(26,111,196,.3);cursor:pointer;padding:8px;transition:all .3s;flex-shrink:0}
+.burger span{display:block;width:100%;height:2px;background:var(--bl);transition:all .3s;transform-origin:center}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
 .reveal.in{opacity:1;transform:translateY(0)}
-@media(max-width:768px){nav{padding:12px 16px}.nav-links{display:none}.feat-grid,.oc-layout,.prot-layout,.clans-layout,.str-grid{grid-template-columns:1fr}.prof-grid{grid-template-columns:repeat(2,1fr)}.info-grid{grid-template-columns:repeat(2,1fr)}.foot-wrap{grid-template-columns:1fr}.foot-links{align-items:flex-start}body{cursor:auto}#cur,#cur-ring{display:none}}
+
+/* ── MOBILE ──────────────────────────────────────────── */
+@media(max-width:768px){
+  body{cursor:auto}
+  #cur,#cur-ring{display:none}
+
+  /* NAV */
+  nav{padding:12px 16px}
+  .burger{display:flex}
+  .nav-status{font-size:11px}
+  .nav-links{
+    display:none;
+    position:fixed;top:0;left:0;right:0;bottom:0;
+    background:rgba(5,8,16,.97);
+    backdrop-filter:blur(20px);
+    flex-direction:column;align-items:center;justify-content:center;
+    gap:32px;z-index:490;
+    list-style:none;
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{font-size:18px;letter-spacing:4px}
+
+  /* ANNOUNCE BAR */
+  #announce-bar{font-size:10px!important;letter-spacing:1px!important;padding:6px 12px!important;gap:6px!important;line-height:1.4}
+  #announce-bar span:last-child,#announce-bar span:first-child{display:none}
+
+  /* HERO — push down for both nav + banner */
+  .hero{padding:130px 16px 50px}
+  .eyebrow{letter-spacing:3px;font-size:9px}
+  .hero-desc br{display:none}
+  .hero-desc{font-size:15px;padding:0 4px}
+  .ip-box{padding:14px 20px}
+  .ip-val{font-size:18px;letter-spacing:1px}
+  .ip-label{letter-spacing:1px;font-size:8px}
+
+  /* SECTIONS */
+  section{padding:56px 14px}
+  .sh{margin-bottom:36px}
+
+  /* FEATURES */
+  .feat-grid{grid-template-columns:1fr}
+
+  /* OMEGA COIN */
+  .oc-layout{grid-template-columns:1fr;gap:36px}
+  .oc-s::after{display:none}
+  .oc-content .sh{text-align:center}
+  .oc-content .sl2{margin:18px auto 0}
+
+  /* PROTECTION */
+  .prot-layout{grid-template-columns:1fr;gap:28px}
+  /* Tier table — stack as cards */
+  .tier-hdr{display:none!important}
+  .tier-row{
+    display:flex!important;
+    flex-direction:column!important;
+    gap:10px!important;
+    padding:16px 14px!important;
+  }
+  .tier-row>div[style*="text-align:center"],
+  .tier-row>div[style*="text-align:right"]{text-align:left!important}
+
+  /* PROFESSIONS */
+  .prof-grid{grid-template-columns:repeat(2,1fr)}
+
+  /* CLANS */
+  .prot-layout{grid-template-columns:1fr}
+  .clan-row{grid-template-columns:36px 1fr 52px!important;gap:6px!important}
+  .clan-mb,.clan-kdr{display:none}
+
+  /* AUCTION */
+  .a-hdr{display:none!important}
+  .a-row{grid-template-columns:28px 1fr 75px!important;gap:8px!important}
+  .a-seller,.a-time{display:none}
+  .auct-items{min-height:auto}
+
+  /* STREAMS */
+  .str-grid{grid-template-columns:1fr}
+
+  /* INFO */
+  .info-grid{grid-template-columns:repeat(2,1fr)}
+
+  /* FOOTER */
+  .foot-wrap{grid-template-columns:1fr;gap:28px}
+  .foot-links{align-items:flex-start;flex-direction:row;flex-wrap:wrap;gap:14px}
+
+  /* COMMANDS BOXES */
+  .prot-layout>[div]>div[style*="display:grid"]{grid-template-columns:1fr!important}
+}
 </style>
 </head>
 <body>
@@ -225,15 +319,20 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 
 <nav>
   <div class="nav-logo"><span class="o">Ω</span>MEGA SERVER</div>
-  <ul class="nav-links">
-    <li><a href="#features">Сервер</a></li><li><a href="#omega">Экономика</a></li>
-    <li><a href="#protection">Приват</a></li><li><a href="#clans">Кланы</a></li>
-    <li><a href="#auction">Аукцион</a></li><li><a href="#streams">Стримы</a></li>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#features" onclick="closeNav()">Сервер</a></li><li><a href="#omega" onclick="closeNav()">Экономика</a></li>
+    <li><a href="#protection" onclick="closeNav()">Приват</a></li><li><a href="#clans" onclick="closeNav()">Кланы</a></li>
+    <li><a href="#auction" onclick="closeNav()">Аукцион</a></li><li><a href="#streams" onclick="closeNav()">Стримы</a></li>
   </ul>
-  <div class="nav-status"><div class="sdot"></div><span id="statusText">Загрузка...</span></div>
+  <div class="nav-right">
+    <div class="nav-status"><div class="sdot"></div><span id="statusText">Загрузка...</span></div>
+    <button class="burger" id="burger" onclick="toggleNav()" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
 
-<div style="position:fixed;top:56px;left:0;right:0;z-index:499;background:linear-gradient(90deg,rgba(13,74,138,.95),rgba(26,111,196,.95),rgba(13,74,138,.95));backdrop-filter:blur(10px);border-bottom:1px solid rgba(26,111,196,.5);padding:8px 20px;text-align:center;font-family:'Rajdhani',sans-serif;font-size:12px;font-weight:700;letter-spacing:3px;color:#fff;display:flex;align-items:center;justify-content:center;gap:12px">
+<div id="announce-bar" style="position:fixed;top:56px;left:0;right:0;z-index:499;background:linear-gradient(90deg,rgba(13,74,138,.95),rgba(26,111,196,.95),rgba(13,74,138,.95));backdrop-filter:blur(10px);border-bottom:1px solid rgba(26,111,196,.5);padding:8px 20px;text-align:center;font-family:'Rajdhani',sans-serif;font-size:12px;font-weight:700;letter-spacing:3px;color:#fff;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap">
   <span style="color:rgba(255,255,255,.5)">◆</span>
   <span>ВАЙП</span>
   <span style="color:var(--bl);font-family:'Cinzel',serif">27.02.2026</span>
@@ -355,12 +454,12 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
       <div style="padding:8px 0">
 
         <!-- Header -->
-        <div style="display:grid;grid-template-columns:44px 1fr 110px 110px 90px;gap:10px;padding:10px 18px;font-size:9px;font-weight:700;letter-spacing:3px;color:rgba(240,244,255,.25);text-transform:uppercase;border-bottom:1px solid rgba(26,111,196,.12)">
+        <div class="tier-hdr" style="display:grid;grid-template-columns:44px 1fr 110px 110px 90px;gap:10px;padding:10px 18px;font-size:9px;font-weight:700;letter-spacing:3px;color:rgba(240,244,255,.25);text-transform:uppercase;border-bottom:1px solid rgba(26,111,196,.12)">
           <span></span><span>Блок привата</span><span style="text-align:center">Радиус</span><span style="text-align:center">Высота</span><span style="text-align:right">Цена Ω</span>
         </div>
 
         <!-- Block 1: Small R-5 -->
-        <div style="display:grid;grid-template-columns:44px 1fr 110px 110px 90px;gap:10px;align-items:center;padding:16px 18px;border-bottom:1px solid rgba(255,255,255,.04);transition:background .2s" onmouseover="this.style.background='rgba(26,111,196,.05)'" onmouseout="this.style.background=''">
+        <div class="tier-row" style="display:grid;grid-template-columns:44px 1fr 110px 110px 90px;gap:10px;align-items:center;padding:16px 18px;border-bottom:1px solid rgba(255,255,255,.04);transition:background .2s" onmouseover="this.style.background='rgba(26,111,196,.05)'" onmouseout="this.style.background=''">
           <span style="font-size:24px;text-align:center">🔵</span>
           <div>
             <div style="font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:#5b8dee">Лазуритовая руда</div>
@@ -386,7 +485,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
         </div>
 
         <!-- Block 2: Medium R-16 -->
-        <div style="display:grid;grid-template-columns:44px 1fr 110px 110px 90px;gap:10px;align-items:center;padding:16px 18px;border-bottom:1px solid rgba(255,255,255,.04);transition:background .2s" onmouseover="this.style.background='rgba(26,111,196,.05)'" onmouseout="this.style.background=''">
+        <div class="tier-row" style="display:grid;grid-template-columns:44px 1fr 110px 110px 90px;gap:10px;align-items:center;padding:16px 18px;border-bottom:1px solid rgba(255,255,255,.04);transition:background .2s" onmouseover="this.style.background='rgba(26,111,196,.05)'" onmouseout="this.style.background=''">
           <span style="font-size:24px;text-align:center">💚</span>
           <div>
             <div style="font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:#4ade80">Изумрудная руда</div>
@@ -412,7 +511,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
         </div>
 
         <!-- Block 3: Large R-32 -->
-        <div style="display:grid;grid-template-columns:44px 1fr 110px 110px 90px;gap:10px;align-items:center;padding:16px 18px;transition:background .2s;position:relative;overflow:hidden" onmouseover="this.style.background='rgba(26,111,196,.07)'" onmouseout="this.style.background=''">
+        <div class="tier-row" style="display:grid;grid-template-columns:44px 1fr 110px 110px 90px;gap:10px;align-items:center;padding:16px 18px;transition:background .2s;position:relative;overflow:hidden" onmouseover="this.style.background='rgba(26,111,196,.07)'" onmouseout="this.style.background=''">
           <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(26,111,196,.6),transparent)"></div>
           <span style="font-size:24px;text-align:center">💎</span>
           <div>
@@ -883,7 +982,18 @@ const statObs=new IntersectionObserver(entries=>{
     }
   });
 },{threshold:.5});
-document.querySelectorAll('.it').forEach(el=>statObs.observe(el));
+document.querySelectorAll('.it').forEach(el=>statObs.observe(el));// ── BURGER MENU ──────────────────────────────────────
+function toggleNav(){
+  const b=document.getElementById('burger');
+  const n=document.getElementById('navLinks');
+  b.classList.toggle('open');
+  n.classList.toggle('open');
+  document.body.style.overflow=n.classList.contains('open')?'hidden':'';
+}
+function closeNav(){
+  document.getElementById('burger').classList.remove('open');
+  document.getElementById('navLinks').classList.remove('open');
+  document.body.style.overflow='';
+}
 </script>
-</body>
 </html>
