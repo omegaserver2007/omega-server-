@@ -33,13 +33,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:cen
 .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(rgba(26,111,196,.05) 0,rgba(26,111,196,.05) 100%) center/100% 1px no-repeat,linear-gradient(rgba(26,111,196,.05) 0,rgba(26,111,196,.05) 100%) center/1px 100% no-repeat;pointer-events:none}
 .eyebrow{font-size:11px;font-weight:700;letter-spacing:6px;text-transform:uppercase;color:var(--bl);margin-bottom:22px;opacity:0;animation:fu .8s .2s forwards}
 .hero-title{font-family:'Cinzel',serif;font-size:clamp(56px,11vw,120px);font-weight:900;line-height:.9;text-align:center;margin-bottom:8px;opacity:0;animation:fu .8s .4s forwards}
-.hero-title .o{color:var(--bl);text-shadow:0 0 40px rgba(26,111,196,.9),0 0 80px rgba(26,111,196,.4);animation:og 3s ease-in-out infinite;position:relative;display:inline-block}
-.hero-title .o::before,.hero-title .o::after{content:'Ω';position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
-.hero-title .o::before{animation:flame1 2.2s ease-in-out infinite;color:transparent;text-shadow:0 -6px 14px rgba(42,143,228,.35),0 -14px 28px rgba(26,111,196,.2),0 -24px 40px rgba(13,74,138,.12);filter:blur(3px);opacity:.7}
-.hero-title .o::after{animation:flame2 3s ease-in-out infinite .6s;color:transparent;text-shadow:0 -8px 20px rgba(60,160,240,.25),0 -20px 38px rgba(26,111,196,.15);filter:blur(5px);opacity:.5}
-@keyframes flame1{0%,100%{transform:scaleY(1) translateY(0);opacity:.6}50%{transform:scaleY(1.06) translateY(-3px);opacity:.8}}
-@keyframes flame2{0%,100%{transform:scaleY(1) translateY(0);opacity:.4}50%{transform:scaleY(1.1) translateY(-5px);opacity:.65}}
-@keyframes og{0%,100%{text-shadow:0 0 30px rgba(26,111,196,.7),0 0 60px rgba(26,111,196,.25)}50%{text-shadow:0 0 45px rgba(42,143,228,.85),0 0 90px rgba(26,111,196,.35)}}
+.hero-title .o{color:var(--bl);text-shadow:0 0 40px rgba(26,111,196,.9),0 0 80px rgba(26,111,196,.4);animation:og 3s ease-in-out infinite}
+@keyframes og{0%,100%{text-shadow:0 0 40px rgba(26,111,196,.9),0 0 80px rgba(26,111,196,.4)}50%{text-shadow:0 0 65px rgba(26,111,196,1),0 0 120px rgba(26,111,196,.6)}}
 .hero-sub{font-family:'Cinzel',serif;font-size:clamp(16px,3vw,30px);font-weight:400;color:rgba(240,244,255,.4);letter-spacing:8px;text-transform:uppercase;margin-bottom:30px;text-align:center;opacity:0;animation:fu .8s .6s forwards}
 .stripes{display:flex;flex-direction:column;gap:3px;width:180px;margin-bottom:30px;opacity:0;animation:fu .8s .7s forwards}
 .st{height:3px;border-radius:2px}.st.b{background:var(--b)}.st.w{background:rgba(240,244,255,.25)}
@@ -72,7 +67,7 @@ section{padding:88px 20px;position:relative}
 .st2{font-family:'Cinzel',serif;font-size:clamp(22px,4vw,42px);font-weight:700;color:var(--w);line-height:1.2}
 .st2 .hl{color:var(--bl)}
 .sl2{width:48px;height:2px;background:var(--b);margin:18px auto 0}
-.feat-s{background:linear-gradient(160deg,#060c1a 0%,#081222 50%,#060e1e 100%)}
+.feat-s{background:var(--d2)}
 .feat-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
 .fc{background:var(--d3);padding:34px 26px;position:relative;overflow:hidden;transition:all .4s;border:1px solid rgba(26,111,196,.07)}
 .fc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--b);transform:scaleX(0);transition:transform .4s}
@@ -82,7 +77,7 @@ section{padding:88px 20px;position:relative}
 .fc:hover .fc-icon{border-color:var(--bl);box-shadow:0 0 16px rgba(26,111,196,.3)}
 .fc-name{font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:var(--w);margin-bottom:9px;letter-spacing:.5px}
 .fc-desc{font-size:13px;color:rgba(240,244,255,.5);line-height:1.7}
-.oc-s{background:linear-gradient(135deg,#050d1c 0%,#071428 50%,#050d1c 100%);overflow:hidden}
+.oc-s{background:var(--d);overflow:hidden}
 .oc-s::after{content:'Ω';position:absolute;right:-50px;top:50%;transform:translateY(-50%);font-family:'Cinzel',serif;font-size:360px;color:rgba(26,111,196,.032);pointer-events:none;line-height:1}
 .oc-layout{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:68px;align-items:center}
 .coin-wrap{display:flex;justify-content:center}
@@ -100,7 +95,7 @@ section{padding:88px 20px;position:relative}
 .fact-ic{font-size:20px;flex-shrink:0;width:42px;height:42px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(26,111,196,.16)}
 .fact-t strong{display:block;font-family:'Cinzel',serif;font-size:12px;font-weight:700;color:var(--w);margin-bottom:3px}
 .fact-t span{font-size:12px;color:rgba(240,244,255,.5);line-height:1.5}
-.prot-s{background:linear-gradient(160deg,#081220 0%,#0a1828 40%,#071018 100%)}
+.prot-s{background:var(--d2)}
 .prot-layout{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
 .prot-visual{background:var(--d3);border:1px solid rgba(26,111,196,.2);overflow:hidden}
 .ptb{background:rgba(26,111,196,.1);padding:10px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(26,111,196,.16)}
@@ -121,7 +116,7 @@ section{padding:88px 20px;position:relative}
 .pf strong{display:block;font-family:'Cinzel',serif;font-size:12px;color:var(--w);margin-bottom:3px}
 .pf span{font-size:12px;color:rgba(240,244,255,.5);line-height:1.5}
 .ptag{display:inline-flex;align-items:center;gap:5px;background:rgba(26,111,196,.18);border:1px solid rgba(26,111,196,.38);padding:2px 9px;font-size:10px;font-weight:700;color:var(--bl);letter-spacing:1px;margin-top:5px}
-.prof-s{background:linear-gradient(180deg,#050c1a 0%,#060e1e 100%)}
+.prof-s{background:var(--d)}
 .prof-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .pc{background:var(--d3);border:1px solid rgba(26,111,196,.08);padding:24px 16px;text-align:center;transition:all .4s;position:relative;overflow:hidden;cursor:none}
 .pc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:0;background:linear-gradient(to top,rgba(26,111,196,.12),transparent);transition:height .4s}
@@ -175,7 +170,7 @@ section{padding:88px 20px;position:relative}
 .auct-foot{text-align:center;margin-top:20px;color:rgba(240,244,255,.35);font-size:11px;letter-spacing:2px;display:flex;align-items:center;justify-content:center;gap:7px}
 .ld{width:5px;height:5px;background:#22c55e;border-radius:50%;animation:sp 1.5s infinite;display:inline-block}
 .auct-note{text-align:center;margin-top:8px;font-size:10px;color:rgba(240,244,255,.22);letter-spacing:1px}
-.str-s{background:linear-gradient(160deg,#081220 0%,#0b1628 100%)}
+.str-s{background:var(--d2)}
 .str-grid{max-width:840px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .sc{background:var(--d3);border:1px solid rgba(26,111,196,.12);overflow:hidden;text-decoration:none;color:inherit;display:block;transition:all .4s}
 .sc:hover{border-color:rgba(26,111,196,.48);transform:translateY(-4px);box-shadow:0 16px 38px rgba(0,0,0,.4),0 0 36px rgba(26,111,196,.12)}
@@ -186,13 +181,13 @@ section{padding:88px 20px;position:relative}
 .sc-info{padding:16px}
 .sc-name{font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:var(--w);margin-bottom:4px}
 .sc-url{font-size:11px;color:var(--bl);letter-spacing:1px}
-.info-s{background:linear-gradient(180deg,#070f1e 0%,#050c18 100%)}
+.info-s{background:var(--d)}
 .info-grid{max-width:860px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
 .it{background:var(--d3);padding:26px 16px;text-align:center;border:1px solid rgba(26,111,196,.06);transition:all .3s}
 .it:hover{background:rgba(26,111,196,.06);border-color:rgba(26,111,196,.26)}
 .it-val{font-family:'Cinzel',serif;font-size:24px;font-weight:900;color:var(--bl);margin-bottom:6px}
 .it-lbl{font-size:9px;font-weight:700;letter-spacing:3px;color:rgba(240,244,255,.32);text-transform:uppercase}
-footer{background:linear-gradient(180deg,#081220 0%,#050c18 100%);border-top:1px solid rgba(26,111,196,.16);padding:52px 20px 34px;position:relative;overflow:hidden}
+footer{background:var(--d2);border-top:1px solid rgba(26,111,196,.16);padding:52px 20px 34px;position:relative;overflow:hidden}
 footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--b),transparent)}
 .foot-wrap{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
 .foot-logo{font-family:'Cinzel',serif;font-size:26px;font-weight:900;color:var(--w);margin-bottom:9px}
@@ -209,108 +204,13 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 #rip{position:fixed;inset:0;pointer-events:none;z-index:7500}
 .ripple{position:absolute;border-radius:50%;border:1px solid rgba(26,111,196,.35);transform:translate(-50%,-50%) scale(0);animation:ra .8s ease-out forwards}
 @keyframes ra{0%{transform:translate(-50%,-50%) scale(0);opacity:.6}100%{transform:translate(-50%,-50%) scale(4);opacity:0}}
-/* ── BURGER ──────────────────────────────────────────── */
-.nav-right{display:flex;align-items:center;gap:12px}
-.burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:rgba(26,111,196,.12);border:1px solid rgba(26,111,196,.3);cursor:pointer;padding:8px;transition:all .3s;flex-shrink:0}
-.burger span{display:block;width:100%;height:2px;background:var(--bl);transition:all .3s;transform-origin:center}
-.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.burger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
-.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
 .reveal.in{opacity:1;transform:translateY(0)}
-
-/* ── MOBILE ──────────────────────────────────────────── */
-@media(max-width:768px){
-  body{cursor:auto}
-  #cur,#cur-ring{display:none}
-
-  /* NAV */
-  nav{padding:12px 16px}
-  .burger{display:flex}
-  .nav-status{font-size:11px}
-  .nav-links{
-    display:none;
-    position:fixed;top:0;left:0;right:0;bottom:0;
-    background:rgba(5,8,16,.97);
-    backdrop-filter:blur(20px);
-    flex-direction:column;align-items:center;justify-content:center;
-    gap:32px;z-index:490;
-    list-style:none;
-  }
-  .nav-links.open{display:flex}
-  .nav-links a{font-size:18px;letter-spacing:4px}
-
-  /* ANNOUNCE BAR */
-  #announce-bar{font-size:10px!important;letter-spacing:1px!important;padding:6px 12px!important;gap:6px!important;line-height:1.4}
-  #announce-bar span:last-child,#announce-bar span:first-child{display:none}
-
-  /* HERO — push down for both nav + banner */
-  .hero{padding:130px 16px 50px}
-  .eyebrow{letter-spacing:3px;font-size:9px}
-  .hero-desc br{display:none}
-  .hero-desc{font-size:15px;padding:0 4px}
-  .ip-box{padding:14px 20px}
-  .ip-val{font-size:18px;letter-spacing:1px}
-  .ip-label{letter-spacing:1px;font-size:8px}
-
-  /* SECTIONS */
-  section{padding:56px 14px}
-  .sh{margin-bottom:36px}
-
-  /* FEATURES */
-  .feat-grid{grid-template-columns:1fr}
-
-  /* OMEGA COIN */
-  .oc-layout{grid-template-columns:1fr;gap:36px}
-  .oc-s::after{display:none}
-  .oc-content .sh{text-align:center}
-  .oc-content .sl2{margin:18px auto 0}
-
-  /* PROTECTION */
-  .prot-layout{grid-template-columns:1fr;gap:28px}
-  /* Tier table — stack as cards */
-  .tier-hdr{display:none!important}
-  .tier-row{
-    display:flex!important;
-    flex-direction:column!important;
-    gap:10px!important;
-    padding:16px 14px!important;
-  }
-  .tier-row>div[style*="text-align:center"],
-  .tier-row>div[style*="text-align:right"]{text-align:left!important}
-
-  /* PROFESSIONS */
-  .prof-grid{grid-template-columns:repeat(2,1fr)}
-
-  /* CLANS */
-  .prot-layout{grid-template-columns:1fr}
-  .clan-row{grid-template-columns:36px 1fr 52px!important;gap:6px!important}
-  .clan-mb,.clan-kdr{display:none}
-
-  /* AUCTION */
-  .a-hdr{display:none!important}
-  .a-row{grid-template-columns:28px 1fr 75px!important;gap:8px!important}
-  .a-seller,.a-time{display:none}
-  .auct-items{min-height:auto}
-
-  /* STREAMS */
-  .str-grid{grid-template-columns:1fr}
-
-  /* INFO */
-  .info-grid{grid-template-columns:repeat(2,1fr)}
-
-  /* FOOTER */
-  .foot-wrap{grid-template-columns:1fr;gap:28px}
-  .foot-links{align-items:flex-start;flex-direction:row;flex-wrap:wrap;gap:14px}
-
-  /* COMMANDS BOXES */
-  .prot-layout>[div]>div[style*="display:grid"]{grid-template-columns:1fr!important}
-}
+@media(max-width:768px){nav{padding:12px 16px}.nav-links{display:none}.feat-grid,.oc-layout,.prot-layout,.clans-layout,.str-grid{grid-template-columns:1fr}.prof-grid{grid-template-columns:repeat(2,1fr)}.info-grid{grid-template-columns:repeat(2,1fr)}.foot-wrap{grid-template-columns:1fr}.foot-links{align-items:flex-start}body{cursor:auto}#cur,#cur-ring{display:none}}
 </style>
 </head>
 <body>
 <canvas id="omega-canvas"></canvas>
-
 <div id="cur"></div><div id="cur-ring"></div>
 <div id="rip"></div>
 <div class="toast" id="toast">✓ IP СКОПИРОВАН</div>
@@ -319,33 +219,20 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 
 <nav>
   <div class="nav-logo"><span class="o">Ω</span>MEGA SERVER</div>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#features" onclick="closeNav()">Сервер</a></li><li><a href="#omega" onclick="closeNav()">Экономика</a></li>
-    <li><a href="#protection" onclick="closeNav()">Приват</a></li><li><a href="#clans" onclick="closeNav()">Кланы</a></li>
-    <li><a href="#auction" onclick="closeNav()">Аукцион</a></li><li><a href="#streams" onclick="closeNav()">Стримы</a></li>
+  <ul class="nav-links">
+    <li><a href="#features">Сервер</a></li><li><a href="#omega">Экономика</a></li>
+    <li><a href="#protection">Приват</a></li><li><a href="#clans">Кланы</a></li>
+    <li><a href="#auction">Аукцион</a></li><li><a href="#streams">Стримы</a></li>
   </ul>
-  <div class="nav-right">
-    <div class="nav-status"><div class="sdot"></div><span id="statusText">Загрузка...</span></div>
-    <button class="burger" id="burger" onclick="toggleNav()" aria-label="Меню">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
+  <div class="nav-status"><div class="sdot"></div><span id="statusText">Загрузка...</span></div>
 </nav>
 
-<div id="announce-bar" style="position:fixed;top:56px;left:0;right:0;z-index:499;background:linear-gradient(90deg,rgba(13,74,138,.95),rgba(26,111,196,.95),rgba(13,74,138,.95));backdrop-filter:blur(10px);border-bottom:1px solid rgba(26,111,196,.5);padding:8px 20px;text-align:center;font-family:'Rajdhani',sans-serif;font-size:12px;font-weight:700;letter-spacing:3px;color:#fff;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap">
-  <span style="color:rgba(255,255,255,.5)">◆</span>
-  <span>ВАЙП</span>
-  <span style="color:var(--bl);font-family:'Cinzel',serif">27.02.2026</span>
-  <span style="color:rgba(255,255,255,.3)">·</span>
-  <span style="color:rgba(255,255,255,.7)">НОВЫЙ СТАРТ · СВЕЖАЯ ЭКОНОМИКА · ЧИСТАЯ КАРТА</span>
-  <span style="color:rgba(255,255,255,.5)">◆</span>
-</div>
 <div class="hero" id="home">
   <div class="eyebrow">Minecraft Java 1.21.10 · Гриф + Survival</div>
   <h1 class="hero-title"><span class="o">Ω</span>MEGA<br>SERVER</h1>
   <div class="hero-sub">Играй. Торгуй. Воюй.</div>
   <div class="stripes"><div class="st b"></div><div class="st w"></div><div class="st b"></div><div class="st w"></div><div class="st b"></div></div>
-  <p class="hero-desc">Без доната на преимущества. Реальная экономика Ω OmegaCoin,<br>профессии и честный PvP.</p>
+  <p class="hero-desc">Без доната на преимущества. Реальная экономика Ω OmegaCoin,<br>профессии, кланы, аукцион и честный PvP.</p>
   <div class="ip-wrap">
     <div class="ip-box" onclick="copyIP()">
       <div class="corner tl"></div><div class="corner tr"></div>
@@ -365,7 +252,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 <section class="feat-s" id="features"><div class="sep"></div>
   <div class="sh"><span class="se">Почему ΩmegaServer</span><h2 class="st2">Особенности <span class="hl">сервера</span></h2><div class="sl2"></div></div>
   <div class="feat-grid">
-    <div class="fc reveal"><div class="fc-num">01</div><div class="fc-icon">🏠</div><div class="fc-name">Приват регионов</div><div class="fc-desc">Ставишь блок — создаётся защищённый регион. 3 тира: R-5 (бесплатно), R-16 (150 Ω), R-32 (500 Ω). Высота ±радиус от блока.</div></div>
+    <div class="fc reveal"><div class="fc-num">01</div><div class="fc-icon">🏠</div><div class="fc-name">Приват регионов</div><div class="fc-desc">3 тира привата: R-5 за 500 Ω, R-16 за 1000 Ω, R-32 за 2500 Ω. Аренда спишется с баланса — не плати 48 часов и регион снесётся!</div></div>
     <div class="fc reveal"><div class="fc-num">02</div><div class="fc-icon">⚔️</div><div class="fc-name">PvP система</div><div class="fc-desc">В PvP теряешь вещи и 15 Ω — прямой перевод убийце. В PvE только 5% штраф. Защита новичков 45 минут.</div></div>
     <div class="fc reveal"><div class="fc-num">03</div><div class="fc-icon">💎</div><div class="fc-name">Без доната</div><div class="fc-desc">Никакого доната на преимущества. Всё заработано честно внутри игры.</div></div>
     <div class="fc reveal"><div class="fc-num">04</div><div class="fc-icon">🛡️</div><div class="fc-name">Античит GrimAC</div><div class="fc-desc">GrimAC блокирует читеров в реальном времени. Честная игра для всех.</div></div>
@@ -383,7 +270,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
         <div class="fact reveal"><div class="fact-ic">🎁</div><div class="fact-t"><strong>Стартовый капитал</strong><span>50 Ω каждому новому игроку. Хватит на первый приват и телепорты.</span></div></div>
         <div class="fact reveal"><div class="fact-ic">⏱️</div><div class="fact-t"><strong>+Ω каждые 10 минут</strong><span>Просто будь онлайн — получай пассивный доход каждые 10 минут.</span></div></div>
         <div class="fact reveal"><div class="fact-ic">⚒️</div><div class="fact-t"><strong>Профессии — основной доход</strong><span>Качай профессии и зарабатывай Ω за каждое действие.</span></div></div>
-        <div class="fact reveal"><div class="fact-ic">🏪</div><div class="fact-t"><strong>Свободный рынок</strong><span>Ценность Ω определяют игроки через торговлю между собой.</span></div></div>
+        <div class="fact reveal"><div class="fact-ic">🏛️</div><div class="fact-t"><strong>Свободный рынок</strong><span>Магазина нет. Ценность Ω определяют игроки через аукцион.</span></div></div>
       </div>
     </div>
   </div>
@@ -392,159 +279,97 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 <section class="prot-s" id="protection"><div class="sep"></div>
   <div class="sh"><span class="se">Защита территории</span><h2 class="st2">Приват <span class="hl">регионов</span></h2><div class="sl2"></div></div>
 
-  <!-- How it works -->
-  <div class="prot-layout" style="margin-bottom:52px">
+  <!-- TIER CARDS -->
+  <div style="max-width:1100px;margin:0 auto 56px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
+
+    <!-- SMALL -->
+    <div class="reveal" style="background:var(--d3);border:1px solid rgba(26,111,196,.15);padding:28px 22px;position:relative;overflow:hidden;transition:all .4s">
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(26,111,196,.6),transparent)"></div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:4px;color:rgba(26,111,196,.5);margin-bottom:12px">МАЛЫЙ</div>
+      <div style="font-family:'Cinzel',serif;font-size:22px;font-weight:900;color:var(--w);margin-bottom:4px">R-5</div>
+      <div style="font-size:12px;color:rgba(240,244,255,.4);margin-bottom:20px">11×11 блоков</div>
+      <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:6px">
+        <span style="font-family:'Cinzel',serif;font-size:28px;font-weight:900;color:var(--bl)">500 Ω</span>
+        <span style="font-size:12px;color:rgba(240,244,255,.4)">покупка</span>
+      </div>
+      <div style="font-size:12px;color:rgba(240,244,255,.45);margin-bottom:20px">+ <span style="color:var(--bl);font-weight:700">10 Ω</span> / сутки аренды</div>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;color:rgba(240,244,255,.55)">
+        <div>🔷 Лазурит · Lapis Ore</div>
+        <div>📦 Лимит: <strong style="color:var(--w)">2 блока</strong></div>
+        <div>💣 ТНТ взрывает блок</div>
+        <div>⚔️ PvP внутри работает</div>
+      </div>
+      <div style="margin-top:18px;padding:10px;background:rgba(26,111,196,.07);border:1px solid rgba(26,111,196,.15);font-size:11px;color:rgba(240,244,255,.4);line-height:1.5">
+        ⚠️ Не платишь аренду 48 часов → регион сносится автоматически
+      </div>
+    </div>
+
+    <!-- MEDIUM -->
+    <div class="reveal" style="background:var(--d3);border:1px solid rgba(26,111,196,.3);padding:28px 22px;position:relative;overflow:hidden;transition:all .4s;transform:translateY(-6px)">
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--bl),transparent)"></div>
+      <div style="position:absolute;top:12px;right:12px;font-size:9px;font-weight:700;letter-spacing:2px;background:rgba(26,111,196,.25);color:var(--bl);padding:3px 8px">ПОПУЛЯРНЫЙ</div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:4px;color:rgba(26,111,196,.6);margin-bottom:12px">СРЕДНИЙ</div>
+      <div style="font-family:'Cinzel',serif;font-size:22px;font-weight:900;color:var(--w);margin-bottom:4px">R-16</div>
+      <div style="font-size:12px;color:rgba(240,244,255,.4);margin-bottom:20px">33×33 блока</div>
+      <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:6px">
+        <span style="font-family:'Cinzel',serif;font-size:28px;font-weight:900;color:var(--bl)">1000 Ω</span>
+        <span style="font-size:12px;color:rgba(240,244,255,.4)">покупка</span>
+      </div>
+      <div style="font-size:12px;color:rgba(240,244,255,.45);margin-bottom:20px">+ <span style="color:var(--bl);font-weight:700">25 Ω</span> / сутки аренды</div>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;color:rgba(240,244,255,.55)">
+        <div>💚 Изумруд · Emerald Ore</div>
+        <div>📦 Лимит: <strong style="color:var(--w)">2 блока</strong></div>
+        <div>💣 ТНТ взрывает блок</div>
+        <div>⚔️ PvP внутри работает</div>
+      </div>
+      <div style="margin-top:18px;padding:10px;background:rgba(26,111,196,.07);border:1px solid rgba(26,111,196,.15);font-size:11px;color:rgba(240,244,255,.4);line-height:1.5">
+        ⚠️ Не платишь аренду 48 часов → регион сносится автоматически
+      </div>
+    </div>
+
+    <!-- LARGE -->
+    <div class="reveal" style="background:var(--d3);border:1px solid rgba(251,191,36,.2);padding:28px 22px;position:relative;overflow:hidden;transition:all .4s">
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(251,191,36,.6),transparent)"></div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:4px;color:rgba(251,191,36,.6);margin-bottom:12px">БОЛЬШОЙ</div>
+      <div style="font-family:'Cinzel',serif;font-size:22px;font-weight:900;color:var(--w);margin-bottom:4px">R-32 👑</div>
+      <div style="font-size:12px;color:rgba(240,244,255,.4);margin-bottom:20px">65×65 блоков</div>
+      <div style="display:flex;align-items:baseline;gap:6px;margin-bottom:6px">
+        <span style="font-family:'Cinzel',serif;font-size:28px;font-weight:900;color:#fbbf24">2500 Ω</span>
+        <span style="font-size:12px;color:rgba(240,244,255,.4)">покупка</span>
+      </div>
+      <div style="font-size:12px;color:rgba(240,244,255,.45);margin-bottom:20px">+ <span style="color:#fbbf24;font-weight:700">60 Ω</span> / сутки аренды</div>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;color:rgba(240,244,255,.55)">
+        <div>💎 Алмаз · Diamond Ore</div>
+        <div>📦 Лимит: <strong style="color:var(--w)">1 блок</strong></div>
+        <div>💣 ТНТ взрывает блок</div>
+        <div>⚔️ PvP внутри работает</div>
+      </div>
+      <div style="margin-top:18px;padding:10px;background:rgba(251,191,36,.05);border:1px solid rgba(251,191,36,.12);font-size:11px;color:rgba(240,244,255,.4);line-height:1.5">
+        🌍 Глобальное объявление при создании и уничтожении
+      </div>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div class="prot-layout">
     <div class="reveal">
       <div class="prot-visual">
-        <div class="ptb"><div class="ptb-dot" style="background:#ef4444"></div><div class="ptb-dot" style="background:#fbbf24"></div><div class="ptb-dot" style="background:#22c55e"></div><div class="ptb-title">REGION VISUALIZER — RADIUS 5 (SMALL BLOCK)</div></div>
+        <div class="ptb"><div class="ptb-dot" style="background:#ef4444"></div><div class="ptb-dot" style="background:#fbbf24"></div><div class="ptb-dot" style="background:#22c55e"></div><div class="ptb-title">REGION VISUALIZER — RADIUS 5</div></div>
         <div class="pgrid-wrap"><div class="pgrid" id="protGrid"></div>
         <div class="legend"><div class="leg"><div class="leg-d" style="background:rgba(26,111,196,.65)"></div>Блок привата</div><div class="leg"><div class="leg-d" style="background:rgba(26,111,196,.16)"></div>Защита</div><div class="leg"><div class="leg-d" style="background:rgba(255,255,255,.025)"></div>Открытая</div></div></div>
       </div>
     </div>
     <div>
-      <div class="sh" style="text-align:left;margin-bottom:22px"><span class="se">Как работает</span><h2 class="st2">Блоковый <span class="hl">приват</span></h2><div class="sl2" style="margin-left:0"></div></div>
+      <div class="sh" style="text-align:left;margin-bottom:22px"><span class="se">Механика</span><h2 class="st2">Как работает <span class="hl">аренда</span></h2><div class="sl2" style="margin-left:0"></div></div>
       <div class="prot-facts">
-        <div class="pf reveal"><strong>🧱 Поставь блок</strong><span>Разместь блок-приват — он станет центром защищённого региона.</span></div>
-        <div class="pf reveal"><strong>⌨️ Управление через /ps</strong><span>Все действия — через команды в чате. Никакого GUI. Встань в свой регион и вводи <code style="color:var(--bl)">/ps add [ник]</code>, <code style="color:var(--bl)">/ps info</code> и т.д.</span></div>
-        <div class="pf reveal"><strong>⚔️ PvP и гриф разрешены!</strong><span>Сервер — гриферский. PvP работает везде. Можно взорвать блок привата ТНТ или сдвинуть поршнем — тогда регион снимается!</span></div>
-        <div class="pf reveal"><strong>👥 Добавить друга</strong><span>Зайди в свой регион → введи <code style="color:var(--bl)">/ps add [ник]</code> — игрок добавлен. Убрать: <code style="color:var(--bl)">/ps remove [ник]</code></span></div>
+        <div class="pf reveal"><strong>🧱 Блок = центр региона</strong><span>Ставишь блок — автоматически создаётся защищённый регион. Блок — это и есть приват.</span></div>
+        <div class="pf reveal"><strong>⏱️ Ежесуточное списание</strong><span>Каждые 24 часа с тебя автоматически списывается аренда в Ω. Следи за балансом!</span></div>
+        <div class="pf reveal"><strong>💸 Нет денег = нет привата</strong><span>Если баланс не пополнить в течение 48 часов — регион сносится. Всё что внутри — доступно для гриф!</span></div>
+        <div class="pf reveal"><strong>💣 ТНТ рейды</strong><span>Враги могут взорвать блок привата через ТНТ. Уничтожен блок — уничтожен регион.</span></div>
+        <div class="pf reveal"><strong>👥 Участники</strong><span>Добавить доверенного игрока: <code style="color:var(--bl)">/ps addmember</code></span></div>
       </div>
     </div>
   </div>
-
-
-  <!-- Commands section -->
-  <div style="max-width:1000px;margin:0 auto 52px">
-    <div class="sh" style="margin-bottom:28px"><span class="se">Управление</span><h2 class="st2">Команды <span class="hl">привата</span></h2><div class="sl2"></div></div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px">
-      <div style="background:var(--d3);border:1px solid rgba(26,111,196,.1);padding:18px;transition:all .3s" onmouseover="this.style.borderColor='rgba(26,111,196,.4)'" onmouseout="this.style.borderColor='rgba(26,111,196,.1)'">
-        <div style="font-size:10px;letter-spacing:3px;color:rgba(26,111,196,.6);margin-bottom:10px;font-weight:700">ПОЛУЧИТЬ БЛОК</div>
-        <div style="display:flex;flex-direction:column;gap:6px">
-          <div style="padding:8px 12px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ps get</code> <span style="color:rgba(240,244,255,.4);margin-left:8px">Меню покупки</span></div>
-          <div style="padding:8px 12px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ps get small</code> <span style="color:rgba(240,244,255,.4);margin-left:8px">Малый R-5 (FREE)</span></div>
-          <div style="padding:8px 12px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ps get medium</code> <span style="color:rgba(240,244,255,.4);margin-left:8px">Средний R-16 (150Ω)</span></div>
-          <div style="padding:8px 12px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ps get large</code> <span style="color:rgba(240,244,255,.4);margin-left:8px">Большой R-32 (500Ω)</span></div>
-        </div>
-      </div>
-      <div style="background:var(--d3);border:1px solid rgba(26,111,196,.1);padding:18px;transition:all .3s" onmouseover="this.style.borderColor='rgba(26,111,196,.4)'" onmouseout="this.style.borderColor='rgba(26,111,196,.1)'">
-        <div style="font-size:10px;letter-spacing:3px;color:rgba(26,111,196,.6);margin-bottom:10px;font-weight:700">УПРАВЛЕНИЕ</div>
-        <div style="display:flex;flex-direction:column;gap:6px">
-          <div style="padding:8px 12px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ps info</code> <span style="color:rgba(240,244,255,.4);margin-left:8px">Инфо о регионе</span></div>
-          <div style="padding:8px 12px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ps add [ник]</code> <span style="color:rgba(240,244,255,.4);margin-left:8px">Добавить игрока</span></div>
-          <div style="padding:8px 12px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ps remove [ник]</code> <span style="color:rgba(240,244,255,.4);margin-left:8px">Убрать игрока</span></div>
-          <div style="padding:8px 12px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ps home</code> <span style="color:rgba(240,244,255,.4);margin-left:8px">ТП к привату</span></div>
-        </div>
-      </div>
-      <div style="background:var(--d3);border:1px solid rgba(26,111,196,.1);padding:18px;transition:all .3s" onmouseover="this.style.borderColor='rgba(26,111,196,.4)'" onmouseout="this.style.borderColor='rgba(26,111,196,.1)'">
-        <div style="font-size:10px;letter-spacing:3px;color:rgba(26,111,196,.6);margin-bottom:10px;font-weight:700">ДОПОЛНИТЕЛЬНО</div>
-        <div style="display:flex;flex-direction:column;gap:6px">
-          <div style="padding:8px 12px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ps view</code> <span style="color:rgba(240,244,255,.4);margin-left:8px">Границы региона</span></div>
-          <div style="padding:8px 12px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ps list</code> <span style="color:rgba(240,244,255,.4);margin-left:8px">Мои регионы</span></div>
-          <div style="padding:8px 12px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ps name [имя]</code> <span style="color:rgba(240,244,255,.4);margin-left:8px">Название региона</span></div>
-          <div style="padding:8px 12px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ps unclaim</code> <span style="color:rgba(240,244,255,.4);margin-left:8px">Снять приват</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Block tiers table -->
-  <div style="max-width:1000px;margin:0 auto">
-    <div class="sh" style="margin-bottom:28px"><span class="se">Виды блоков</span><h2 class="st2">Тиры <span class="hl">регионов</span></h2><div class="sl2"></div></div>
-    <div class="prot-visual reveal" style="overflow:visible">
-      <div class="ptb"><div class="ptb-dot" style="background:#ef4444"></div><div class="ptb-dot" style="background:#fbbf24"></div><div class="ptb-dot" style="background:#22c55e"></div><div class="ptb-title">PROTECTION BLOCKS — TIER LIST</div></div>
-      <div style="padding:8px 0">
-
-        <!-- Header -->
-        <div class="tier-hdr" style="display:grid;grid-template-columns:44px 1fr 110px 110px 90px;gap:10px;padding:10px 18px;font-size:9px;font-weight:700;letter-spacing:3px;color:rgba(240,244,255,.25);text-transform:uppercase;border-bottom:1px solid rgba(26,111,196,.12)">
-          <span></span><span>Блок привата</span><span style="text-align:center">Радиус</span><span style="text-align:center">Высота</span><span style="text-align:right">Цена Ω</span>
-        </div>
-
-        <!-- Block 1: Small R-5 -->
-        <div class="tier-row" style="display:grid;grid-template-columns:44px 1fr 110px 110px 90px;gap:10px;align-items:center;padding:16px 18px;border-bottom:1px solid rgba(255,255,255,.04);transition:background .2s" onmouseover="this.style.background='rgba(26,111,196,.05)'" onmouseout="this.style.background=''">
-          <span style="font-size:24px;text-align:center">🔵</span>
-          <div>
-            <div style="font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:#5b8dee">Лазуритовая руда</div>
-            <div style="font-size:10px;color:rgba(240,244,255,.35);margin-top:2px">Стартовый блок · /ps give small · alias: <code style="color:#5b8dee">small</code></div>
-            <div style="margin-top:6px;display:flex;gap:5px;flex-wrap:wrap">
-              <span style="background:rgba(239,68,68,.12);color:#ef4444;border:1px solid rgba(239,68,68,.35);padding:2px 7px;font-size:9px;font-weight:700;letter-spacing:1px">⚔️ pvp ON</span>
-              <span style="background:rgba(239,68,68,.12);color:#ef4444;border:1px solid rgba(239,68,68,.35);padding:2px 7px;font-size:9px;font-weight:700;letter-spacing:1px">💣 tnt ON</span>
-              <span style="background:rgba(239,68,68,.12);color:#ef4444;border:1px solid rgba(239,68,68,.35);padding:2px 7px;font-size:9px;font-weight:700;letter-spacing:1px">🔥 взрывы ON</span>
-            </div>
-          </div>
-          <div style="text-align:center">
-            <div style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:var(--bl)">5</div>
-            <div style="font-size:9px;color:rgba(240,244,255,.3);letter-spacing:1px">11×11 блоков</div>
-          </div>
-          <div style="text-align:center">
-            <div style="font-family:'Cinzel',serif;font-size:16px;font-weight:700;color:var(--bl)">±5</div>
-            <div style="font-size:9px;color:rgba(240,244,255,.3);letter-spacing:1px">11 блоков высота</div>
-          </div>
-          <div style="text-align:right">
-            <div style="font-family:'Cinzel',serif;font-size:16px;font-weight:700;color:#22c55e">FREE</div>
-            <div style="font-size:9px;color:rgba(34,197,94,.5);letter-spacing:1px">Выдаётся при входе</div>
-          </div>
-        </div>
-
-        <!-- Block 2: Medium R-16 -->
-        <div class="tier-row" style="display:grid;grid-template-columns:44px 1fr 110px 110px 90px;gap:10px;align-items:center;padding:16px 18px;border-bottom:1px solid rgba(255,255,255,.04);transition:background .2s" onmouseover="this.style.background='rgba(26,111,196,.05)'" onmouseout="this.style.background=''">
-          <span style="font-size:24px;text-align:center">💚</span>
-          <div>
-            <div style="font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:#4ade80">Изумрудная руда</div>
-            <div style="font-size:10px;color:rgba(240,244,255,.35);margin-top:2px">Средний блок · /ps get medium · alias: <code style="color:#4ade80">medium</code></div>
-            <div style="margin-top:6px;display:flex;gap:5px;flex-wrap:wrap">
-              <span style="background:rgba(239,68,68,.12);color:#ef4444;border:1px solid rgba(239,68,68,.35);padding:2px 7px;font-size:9px;font-weight:700;letter-spacing:1px">⚔️ pvp ON</span>
-              <span style="background:rgba(239,68,68,.12);color:#ef4444;border:1px solid rgba(239,68,68,.35);padding:2px 7px;font-size:9px;font-weight:700;letter-spacing:1px">💣 tnt ON</span>
-              <span style="background:rgba(239,68,68,.12);color:#ef4444;border:1px solid rgba(239,68,68,.35);padding:2px 7px;font-size:9px;font-weight:700;letter-spacing:1px">🔥 лава ON</span>
-            </div>
-          </div>
-          <div style="text-align:center">
-            <div style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:var(--bl)">16</div>
-            <div style="font-size:9px;color:rgba(240,244,255,.3);letter-spacing:1px">33×33 блока</div>
-          </div>
-          <div style="text-align:center">
-            <div style="font-family:'Cinzel',serif;font-size:16px;font-weight:700;color:var(--bl)">±16</div>
-            <div style="font-size:9px;color:rgba(240,244,255,.3);letter-spacing:1px">33 блока высота</div>
-          </div>
-          <div style="text-align:right">
-            <div style="font-family:'Cinzel',serif;font-size:16px;font-weight:700;color:var(--bl)">150 Ω</div>
-            <div style="font-size:9px;color:rgba(26,111,196,.6);letter-spacing:1px">/ps get medium</div>
-          </div>
-        </div>
-
-        <!-- Block 3: Large R-32 -->
-        <div class="tier-row" style="display:grid;grid-template-columns:44px 1fr 110px 110px 90px;gap:10px;align-items:center;padding:16px 18px;transition:background .2s;position:relative;overflow:hidden" onmouseover="this.style.background='rgba(26,111,196,.07)'" onmouseout="this.style.background=''">
-          <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgba(26,111,196,.6),transparent)"></div>
-          <span style="font-size:24px;text-align:center">💎</span>
-          <div>
-            <div style="font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:#60d4f7;display:flex;align-items:center;gap:7px">Алмазная руда <span style="background:rgba(26,111,196,.18);color:#60d4f7;border:1px solid rgba(26,111,196,.4);padding:1px 7px;font-size:9px;font-weight:700;letter-spacing:2px">👑 КОРОЛЬ</span></div>
-            <div style="font-size:10px;color:rgba(240,244,255,.35);margin-top:2px">Большой блок · /ps get large · alias: <code style="color:#60d4f7">large</code></div>
-            <div style="margin-top:6px;display:flex;gap:5px;flex-wrap:wrap">
-              <span style="background:rgba(239,68,68,.12);color:#ef4444;border:1px solid rgba(239,68,68,.35);padding:2px 7px;font-size:9px;font-weight:700;letter-spacing:1px">⚔️ pvp ON</span>
-              <span style="background:rgba(239,68,68,.12);color:#ef4444;border:1px solid rgba(239,68,68,.35);padding:2px 7px;font-size:9px;font-weight:700;letter-spacing:1px">💣 tnt ON</span>
-              <span style="background:rgba(239,68,68,.12);color:#ef4444;border:1px solid rgba(239,68,68,.35);padding:2px 7px;font-size:9px;font-weight:700;letter-spacing:1px">🔥 лава ON</span>
-              <span style="background:rgba(239,68,68,.12);color:#ef4444;border:1px solid rgba(239,68,68,.35);padding:2px 7px;font-size:9px;font-weight:700;letter-spacing:1px">💧 вода ON</span>
-            </div>
-          </div>
-          <div style="text-align:center">
-            <div style="font-family:'Cinzel',serif;font-size:18px;font-weight:700;color:var(--bl)">32</div>
-            <div style="font-size:9px;color:rgba(240,244,255,.3);letter-spacing:1px">65×65 блоков</div>
-          </div>
-          <div style="text-align:center">
-            <div style="font-family:'Cinzel',serif;font-size:16px;font-weight:700;color:#60d4f7">±32</div>
-            <div style="font-size:9px;color:rgba(240,244,255,.3);letter-spacing:1px">65 блоков высота</div>
-          </div>
-          <div style="text-align:right">
-            <div style="font-family:'Cinzel',serif;font-size:16px;font-weight:700;color:#60d4f7">500 Ω</div>
-            <div style="font-size:9px;color:rgba(96,212,247,.5);letter-spacing:1px">/ps get large</div>
-          </div>
-        </div>
-
-      </div>
-      <div style="padding:12px 18px;background:rgba(26,111,196,.04);border-top:1px solid rgba(26,111,196,.1);font-size:10px;color:rgba(240,244,255,.28);letter-spacing:2px;text-align:center">
-        БЛОКИ КЛАДУТСЯ В МИР · КОМАНДЫ: /ps get [small|medium|large] · УПРАВЛЕНИЕ: /ps info
-      </div>
-    </div>
-  </div>
-
 </section>
 
 <section class="prof-s" id="professions"><div class="sep"></div>
@@ -561,112 +386,67 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
   </div>
 </section>
 
-
-
-
-
-
-<section style="background:linear-gradient(150deg,#081220 0%,#0a1728 50%,#070f1c 100%)" id="clans"><div class="sep"></div>
+<section class="clans-s" id="clans"><div class="sep"></div>
   <div class="sh"><span class="se">Война и союзы</span><h2 class="st2">Система <span class="hl">кланов</span></h2><div class="sl2"></div></div>
-  <div class="prot-layout">
-    <div>
-      <div class="prot-visual">
-        <div class="ptb"><div class="ptb-dot" style="background:#ef4444"></div><div class="ptb-dot" style="background:#fbbf24"></div><div class="ptb-dot" style="background:#22c55e"></div><div class="ptb-title">CLAN SYSTEM — OMEGA</div></div>
-        <div style="padding:24px 18px;display:flex;flex-direction:column;gap:10px">
-          <div style="display:flex;align-items:center;gap:12px;padding:12px;background:rgba(26,111,196,.06);border:1px solid rgba(26,111,196,.14)">
-            <span style="font-size:22px">⚔️</span>
-            <div>
-              <div style="font-family:'Cinzel',serif;font-size:11px;color:var(--w);font-weight:700">Война кланов</div>
-              <div style="font-size:11px;color:rgba(240,244,255,.4);margin-top:2px">Объяви войну — убийство врага даёт бонус KDR</div>
-            </div>
+  <div class="clans-layout">
+    <!-- LIVE SERVER STATUS PANEL -->
+    <div class="clan-preview reveal">
+      <div class="clan-tb"><div class="ptb-dot" style="background:#ef4444"></div><div class="ptb-dot" style="background:#fbbf24"></div><div class="ptb-dot" style="background:#22c55e"></div><div class="clan-tb-title" id="srvPanelTitle">Ω СТАТУС СЕРВЕРА</div></div>
+      <div style="padding:24px 20px;display:flex;flex-direction:column;gap:16px">
+        <!-- Online count -->
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:16px;background:rgba(26,111,196,.05);border:1px solid rgba(26,111,196,.12)">
+          <div>
+            <div style="font-size:10px;font-weight:700;letter-spacing:3px;color:rgba(240,244,255,.3);text-transform:uppercase;margin-bottom:6px">Игроков онлайн</div>
+            <div style="font-family:'Cinzel',serif;font-size:32px;font-weight:900;color:var(--bl)" id="srvOnline">—</div>
           </div>
-          <div style="display:flex;align-items:center;gap:12px;padding:12px;background:rgba(26,111,196,.06);border:1px solid rgba(26,111,196,.14)">
-            <span style="font-size:22px">🤝</span>
-            <div>
-              <div style="font-family:'Cinzel',serif;font-size:11px;color:var(--w);font-weight:700">Союзы</div>
-              <div style="font-size:11px;color:rgba(240,244,255,.4);margin-top:2px">Заключай союзы — friendly fire отключён</div>
-            </div>
-          </div>
-          <div style="display:flex;align-items:center;gap:12px;padding:12px;background:rgba(26,111,196,.06);border:1px solid rgba(26,111,196,.14)">
-            <span style="font-size:22px">📊</span>
-            <div>
-              <div style="font-family:'Cinzel',serif;font-size:11px;color:var(--w);font-weight:700">Рейтинг KDR</div>
-              <div style="font-size:11px;color:rgba(240,244,255,.4);margin-top:2px">Топ кланов по убийствам — докажи кто сильнее</div>
-            </div>
+          <div style="text-align:right">
+            <div style="font-size:10px;font-weight:700;letter-spacing:3px;color:rgba(240,244,255,.3);text-transform:uppercase;margin-bottom:6px">Слотов</div>
+            <div style="font-family:'Cinzel',serif;font-size:32px;font-weight:900;color:rgba(240,244,255,.3)" id="srvMax">—</div>
           </div>
         </div>
+        <!-- Version / ping -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+          <div style="padding:12px;background:rgba(26,111,196,.04);border:1px solid rgba(26,111,196,.1);text-align:center">
+            <div style="font-size:9px;font-weight:700;letter-spacing:3px;color:rgba(240,244,255,.28);text-transform:uppercase;margin-bottom:5px">Версия</div>
+            <div style="font-family:'Cinzel',serif;font-size:13px;font-weight:700;color:var(--w)" id="srvVer">—</div>
+          </div>
+          <div style="padding:12px;background:rgba(26,111,196,.04);border:1px solid rgba(26,111,196,.1);text-align:center">
+            <div style="font-size:9px;font-weight:700;letter-spacing:3px;color:rgba(240,244,255,.28);text-transform:uppercase;margin-bottom:5px">Статус</div>
+            <div style="font-family:'Cinzel',serif;font-size:13px;font-weight:700" id="srvStatus">Загрузка...</div>
+          </div>
+        </div>
+        <!-- Player list -->
+        <div style="border:1px solid rgba(26,111,196,.1);overflow:hidden">
+          <div style="background:rgba(26,111,196,.1);padding:8px 14px;font-size:9px;font-weight:700;letter-spacing:3px;color:rgba(240,244,255,.3);text-transform:uppercase">Игроки онлайн</div>
+          <div id="srvPlayers" style="padding:12px 14px;min-height:60px;font-size:12px;color:rgba(240,244,255,.5);line-height:1.8">Загрузка...</div>
+        </div>
+        <div style="text-align:center;font-size:9px;letter-spacing:2px;color:rgba(240,244,255,.2);text-transform:uppercase">Обновляется каждые 30 сек</div>
       </div>
     </div>
-    <div>
-      <div class="sh" style="text-align:left;margin-bottom:22px"><span class="se">Как работают кланы</span><h2 class="st2">Вместе <span class="hl">сильнее</span></h2><div class="sl2" style="margin-left:0"></div></div>
-      <div class="prot-facts">
-        <div class="pf reveal"><strong>🏛️ Создать клан — 100 Ω</strong><span>Придумай тег 2–5 символов. Максимум 25 участников. Система ранков внутри клана.</span></div>
-        <div class="pf reveal"><strong>⚔️ Войны</strong><span>Объяви войну другому клану. Все убийства врагов идут в счёт KDR.</span></div>
-        <div class="pf reveal"><strong>🤝 Союзники</strong><span>Заключай союзы с дружественными кланами — они не будут получать урон от тебя.</span></div>
-        <div class="pf reveal"><strong>💬 Клановый чат</strong><span>Приватный чат только для членов клана командой <code style="color:var(--bl)">.</code></span></div>
-      </div>
+
+    <div class="clans-info">
+      <div class="sh" style="text-align:left;margin-bottom:20px"><span class="se">Как работают кланы</span><h2 class="st2">Вместе <span class="hl">сильнее</span></h2><div class="sl2" style="margin-left:0"></div></div>
+      <div class="cf reveal"><strong>🏛️ Создать клан — 100 Ω</strong><span>Тег 2-5 символов. Максимум 25 участников. Система ранков: Recruit → Treasurer → Лидер.</span></div>
+      <div class="cf reveal"><strong>⚔️ Войны кланов</strong><span>Объяви войну. Убийство врага даёт x2 KDR. Союзники защищены от friendly fire.</span></div>
+      <div class="cf reveal"><strong>🤝 Союзы</strong><span>Заключай союзы с другими кланами. Общий чат /ally для координации.</span></div>
+      <div class="cf reveal"><strong>📊 Рейтинг KDR</strong><span>Убийство соперника +2, нейтрала +1, союзника -1. Топ по KDR.</span></div>
+      <div class="cf reveal"><strong>💬 Клановый чат</strong><span>Приватный чат командой <code style="color:var(--bl)">.</code> · Союзный чат <code style="color:var(--bl)">/ally</code></span></div>
     </div>
   </div>
 </section>
 
-<section style="background:linear-gradient(160deg,#050d1a 0%,#071422 50%,#050c18 100%)" id="auction"><div class="sep"></div>
+<section class="auct-s" id="auction"><div class="sep"></div>
   <div class="sh"><span class="se">Торговля между игроками</span><h2 class="st2">Игровой <span class="hl">аукцион</span></h2><div class="sl2"></div></div>
-  <div class="prot-layout">
-    <div>
-      <div class="sh" style="text-align:left;margin-bottom:22px"><span class="se">Как работает</span><h2 class="st2">Рынок <span class="hl">игроков</span></h2><div class="sl2" style="margin-left:0"></div></div>
-      <div class="prot-facts">
-        <div class="pf reveal"><strong>📦 Выставить лот — /ah sell</strong><span>Возьми предмет в руку и введи <code style="color:var(--bl)">/ah sell &lt;цена&gt;</code>. Комиссия за выставление — 5 Ω.</span></div>
-        <div class="pf reveal"><strong>🔍 Поиск</strong><span>Ищи нужный предмет через <code style="color:var(--bl)">/ah search &lt;название&gt;</code> или листай весь аукцион через <code style="color:var(--bl)">/ah</code>.</span></div>
-        <div class="pf reveal"><strong>⏱️ Срок лота — 48 часов</strong><span>Лот висит двое суток. Если не купили — предмет вернётся к тебе.</span></div>
-        <div class="pf reveal"><strong>📥 Забрать деньги — /ah collect</strong><span>После продажи деньги ждут тебя в /ah collect — даже если был оффлайн.</span></div>
-        <div class="pf reveal"><strong>🏷️ Минимальная цена — 1 Ω</strong><span>Выставляй за любую цену. Рынок сам определит справедливую стоимость.</span></div>
+  <div class="auct-wrap">
+    <div class="auct-screen">
+      <div class="auct-tb"><div class="ptb-dot" style="background:#ef4444"></div><div class="ptb-dot" style="background:#fbbf24"></div><div class="ptb-dot" style="background:#22c55e"></div><div class="auct-tb-title">Ω АУКЦИОН — ТОРГОВАЯ ПЛОЩАДКА</div><div class="auct-badge" id="auctBadge">⬤ LIVE</div></div>
+      <div class="auct-items">
+        <div class="a-hdr"><span></span><span>Предмет</span><span>Продавец</span><span>Цена</span><span>Осталось</span></div>
+        <div id="auctList"></div>
       </div>
     </div>
-    <div>
-      <div class="prot-visual">
-        <div class="ptb"><div class="ptb-dot" style="background:#ef4444"></div><div class="ptb-dot" style="background:#fbbf24"></div><div class="ptb-dot" style="background:#22c55e"></div><div class="ptb-title">Ω АУКЦИОН — КОМАНДЫ</div></div>
-        <div style="padding:20px 18px;display:flex;flex-direction:column;gap:8px">
-          <div style="padding:10px 14px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ah</code> <span style="color:rgba(240,244,255,.5);margin-left:8px">Открыть аукцион</span></div>
-          <div style="padding:10px 14px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ah sell &lt;цена&gt;</code> <span style="color:rgba(240,244,255,.5);margin-left:8px">Выставить предмет</span></div>
-          <div style="padding:10px 14px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ah collect</code> <span style="color:rgba(240,244,255,.5);margin-left:8px">Забрать деньги</span></div>
-          <div style="padding:10px 14px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ah cancel</code> <span style="color:rgba(240,244,255,.5);margin-left:8px">Снять свой лот</span></div>
-          <div style="padding:10px 14px;background:rgba(26,111,196,.07);border-left:2px solid var(--bl);font-size:12px"><code style="color:var(--bl);font-family:monospace">/ah search &lt;текст&gt;</code> <span style="color:rgba(240,244,255,.5);margin-left:8px">Найти предмет</span></div>
-          <div style="margin-top:10px;padding:12px;background:rgba(26,111,196,.04);border:1px solid rgba(26,111,196,.15);text-align:center">
-            <div style="font-size:10px;letter-spacing:3px;color:rgba(240,244,255,.3);text-transform:uppercase">Магазина нет</div>
-            <div style="font-family:'Cinzel',serif;font-size:13px;color:var(--bl);margin-top:4px">Цены устанавливают игроки</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section style="background:var(--d2)" id="info"><div class="sep"></div>
-  <div class="sh"><span class="se">Важно знать</span><h2 class="st2">Текущие <span class="hl">ограничения</span></h2><div class="sl2"></div></div>
-  <div class="feat-grid" style="max-width:900px;margin:0 auto;grid-template-columns:repeat(3,1fr)">
-
-    <div class="fc reveal">
-      <div class="fc-num">⚠️</div>
-      <div class="fc-icon">🧑‍🌾</div>
-      <div class="fc-name">Торговля с жителями</div>
-      <div class="fc-desc">Торговля с жителями-NPC <strong style="color:rgba(239,68,68,.85)">отключена</strong>. Это осознанное решение для баланса экономики — цены должны формировать игроки, а не ванильные вилледжеры.</div>
-    </div>
-
-    <div class="fc reveal">
-      <div class="fc-num">🔒</div>
-      <div class="fc-icon">🔥</div>
-      <div class="fc-name">Нижний мир</div>
-      <div class="fc-desc">Портал в Незер <strong style="color:rgba(239,68,68,.85)">временно закрыт</strong>. Откроется когда на сервере соберётся достаточное количество активных игроков. Следи за анонсами в Discord.</div>
-    </div>
-
-    <div class="fc reveal">
-      <div class="fc-num">🔒</div>
-      <div class="fc-icon">🌌</div>
-      <div class="fc-name">Край (The End)</div>
-      <div class="fc-desc">Портал в Край <strong style="color:rgba(239,68,68,.85)">временно закрыт</strong>. Откроется вместе с Незером — когда сервер наберёт нормальный онлайн. Дракон подождёт.</div>
-    </div>
-
+    <div class="auct-foot"><div class="ld"></div><span id="auctStatus">Синхронизация с сервером...</span></div>
+    <div class="auct-note" id="auctNote">Для отображения реальных лотов нужен AuctionWebAPI плагин · Сейчас демо-режим</div>
   </div>
 </section>
 
@@ -686,7 +466,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 
 <section class="info-s"><div class="sep"></div>
   <div class="info-grid">
-    <div class="it reveal"><div class="it-val">1.21.10</div><div class="it-lbl">Java Edition</div></div>
+    <div class="it reveal"><div class="it-val">1.21</div><div class="it-lbl">Java Edition</div></div>
     <div class="it reveal"><div class="it-val">50</div><div class="it-lbl">Слотов</div></div>
     <div class="it reveal"><div class="it-val">50 Ω</div><div class="it-lbl">Старт</div></div>
     <div class="it reveal"><div class="it-val">0₽</div><div class="it-lbl">Донат</div></div>
@@ -703,8 +483,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
     </div>
     <div class="foot-links">
       <a href="#home" class="foot-link">Главная</a><a href="#omega" class="foot-link">Экономика</a>
-      <a href="#protection" class="foot-link">Приват</a><a href="#clans" class="foot-link">Кланы</a>
-      <a href="#auction" class="foot-link">Аукцион</a>
+      <a href="#clans" class="foot-link">Кланы</a><a href="#auction" class="foot-link">Аукцион</a>
       <a href="https://www.twitch.tv/omega_max2007" target="_blank" class="foot-link">Twitch</a>
       <a href="https://www.youtube.com/@omega2007-j6r" target="_blank" class="foot-link">YouTube</a>
     </div>
@@ -713,81 +492,41 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 </div>
 
 <script>
-// aurora removed
-
-// ── SHOOTING STARS ───────────────────────────────────
+// ── FLYING OMEGAS ────────────────────────────────────
 const canvas=document.getElementById('omega-canvas');
 const ctx2=canvas.getContext('2d');
-let W,H;
+let W,H,omegas=[],mouse={x:-999,y:-999};
 function resize(){W=canvas.width=innerWidth;H=canvas.height=innerHeight}
 resize();window.addEventListener('resize',resize);
-
-// Stars background
-const stars=[];
-for(let i=0;i<180;i++){
-  stars.push({x:Math.random(),y:Math.random(),r:Math.random()*1.2+.2,a:Math.random()*.8+.1,tw:Math.random()*3+1,tp:Math.random()*Math.PI*2});
-}
-
-// Shooting stars
-class Shoot{
-  constructor(){this.reset()}
-  reset(){
-    this.x=Math.random()*W*1.2;
-    this.y=-10;
-    this.len=80+Math.random()*120;
-    this.speed=8+Math.random()*14;
-    this.angle=Math.PI/4+Math.random()*.3;
-    this.a=0;this.alive=true;
-    this.delay=Math.random()*4000;
-    this.born=Date.now()+this.delay;
-  }
-  update(){
-    if(Date.now()<this.born)return;
-    this.x+=Math.cos(this.angle)*this.speed;
-    this.y+=Math.sin(this.angle)*this.speed;
-    this.a=Math.min(1,(Date.now()-this.born)/200);
-    if(this.x>W+200||this.y>H+200)this.reset();
-  }
-  draw(){
-    if(Date.now()<this.born)return;
-    const tail={x:this.x-Math.cos(this.angle)*this.len,y:this.y-Math.sin(this.angle)*this.len};
-    const g=ctx2.createLinearGradient(tail.x,tail.y,this.x,this.y);
-    g.addColorStop(0,'rgba(42,143,228,0)');
-    g.addColorStop(.7,'rgba(42,143,228,'+(this.a*.6)+')');
-    g.addColorStop(1,'rgba(180,220,255,'+(this.a*.9)+')');
-    ctx2.beginPath();ctx2.moveTo(tail.x,tail.y);ctx2.lineTo(this.x,this.y);
-    ctx2.strokeStyle=g;ctx2.lineWidth=1.5;ctx2.stroke();
-    ctx2.beginPath();ctx2.arc(this.x,this.y,2,0,Math.PI*2);
-    ctx2.fillStyle='rgba(180,220,255,'+(this.a*.8)+')';ctx2.fill();
-  }
-}
-const shoots=Array.from({length:6},()=>new Shoot());
-
-// Flying Omegas
-let mouse={x:-999,y:-999};
 document.addEventListener('mousemove',e=>{mouse.x=e.clientX;mouse.y=e.clientY});
+
 class Omega{
   constructor(){this.reset(true)}
   reset(init=false){
     this.x=Math.random()*W;
     this.y=init?Math.random()*H:H+50;
-    this.size=10+Math.random()*24;
-    this.vx=(Math.random()-.5)*.4;
-    this.vy=-(0.2+Math.random()*.5);
-    this.a=0.02+Math.random()*.055;
+    this.size=14+Math.random()*28;
+    this.vx=(Math.random()-.5)*.45;
+    this.vy=-(0.25+Math.random()*.55);
+    this.a=0.03+Math.random()*.065;
     this.ca=this.a;this.ta=this.a;
     this.fvx=0;this.fvy=0;
     this.rot=Math.random()*Math.PI*2;
-    this.rs=(Math.random()-.5)*.007;
+    this.rs=(Math.random()-.5)*.008;
   }
   update(){
     const dx=this.x-mouse.x,dy=this.y-mouse.y;
-    const dist=Math.hypot(dx,dy);
-    if(dist<140&&dist>0){
-      const f=(140-dist)/140;
-      this.fvx+=(dx/dist)*f*3.5;this.fvy+=(dy/dist)*f*3.5;
-      this.ta=Math.min(.18,this.a*3);
-    }else{this.fvx*=.84;this.fvy*=.84;this.ta=this.a;}
+    const dist=Math.sqrt(dx*dx+dy*dy);
+    const fr=130;
+    if(dist<fr&&dist>0){
+      const f=(fr-dist)/fr;
+      this.fvx+=(dx/dist)*f*4;
+      this.fvy+=(dy/dist)*f*4;
+      this.ta=Math.min(0.2,this.a*3);
+    } else {
+      this.fvx*=.85;this.fvy*=.85;
+      this.ta=this.a;
+    }
     this.x+=this.vx+this.fvx;this.y+=this.vy+this.fvy;
     this.rot+=this.rs;
     this.ca+=(this.ta-this.ca)*.1;
@@ -801,24 +540,8 @@ class Omega{
     ctx2.fillText('Ω',0,0);ctx2.restore();
   }
 }
-const omegas=Array.from({length:25},()=>new Omega());
-
-let stT=0;
-function animO(){
-  ctx2.clearRect(0,0,W,H);
-  // Stars
-  stT+=.005;
-  stars.forEach(s=>{
-    const tw=Math.sin(stT*s.tw+s.tp)*.4+.6;
-    ctx2.beginPath();ctx2.arc(s.x*W,s.y*H,s.r,0,Math.PI*2);
-    ctx2.fillStyle=`rgba(180,210,255,${s.a*tw})`;ctx2.fill();
-  });
-  // Shooting stars
-  shoots.forEach(s=>{s.update();s.draw()});
-  // Omegas
-  omegas.forEach(o=>{o.update();o.draw()});
-  requestAnimationFrame(animO);
-}
+for(let i=0;i<28;i++)omegas.push(new Omega());
+function animO(){ctx2.clearRect(0,0,W,H);omegas.forEach(o=>{o.update();o.draw()});requestAnimationFrame(animO)}
 animO();
 
 // ── CURSOR ───────────────────────────────────────────
@@ -827,48 +550,25 @@ let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
 function animR(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animR)}animR();
 document.querySelectorAll('a,button,[onclick],.fc,.pc,.sc,.fact,.cf,.pf,.it').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cur.style.transform='translate(-50%,-50%) scale(2.2)';ring.style.width='46px';ring.style.height='46px';ring.style.borderColor='rgba(26,111,196,.9)'});
+  el.addEventListener('mouseenter',()=>{cur.style.transform='translate(-50%,-50%) scale(2.2)';ring.style.width='46px';ring.style.height='46px';ring.style.borderColor='rgba(26,111,196,.8)'});
   el.addEventListener('mouseleave',()=>{cur.style.transform='translate(-50%,-50%) scale(1)';ring.style.width='34px';ring.style.height='34px';ring.style.borderColor='rgba(26,111,196,.5)'});
 });
 
 // ── RIPPLE ───────────────────────────────────────────
 document.addEventListener('click',e=>{
   const r=document.getElementById('rip');
-  for(let i=0;i<3;i++){
-    const d=document.createElement('div');d.className='ripple';
-    const s=30+i*20;
-    d.style.cssText=`left:${e.clientX}px;top:${e.clientY}px;width:${s}px;height:${s}px;animation-delay:${i*0.08}s`;
-    r.appendChild(d);setTimeout(()=>d.remove(),900+i*80);
-  }
-  playC();
+  const d=document.createElement('div');d.className='ripple';
+  d.style.cssText=`left:${e.clientX}px;top:${e.clientY}px;width:50px;height:50px`;
+  r.appendChild(d);setTimeout(()=>d.remove(),800);playC();
 });
 
-// ── ADVANCED SOUND ENGINE ────────────────────────────
+// ── SOUND ────────────────────────────────────────────
 let ax;
 function gac(){if(!ax)ax=new(window.AudioContext||window.webkitAudioContext)();return ax}
-function tone(f,d,v=.07,type='sine'){
-  try{
-    const c=gac(),o=c.createOscillator(),g=c.createGain(),rev=c.createGain();
-    o.connect(g);g.connect(c.destination);
-    o.type=type;o.frequency.setValueAtTime(f,c.currentTime);
-    o.frequency.exponentialRampToValueAtTime(f*.7,c.currentTime+d);
-    g.gain.setValueAtTime(v,c.currentTime);
-    g.gain.exponentialRampToValueAtTime(.001,c.currentTime+d);
-    o.start(c.currentTime);o.stop(c.currentTime+d+.05);
-  }catch(e){}
-}
-function playC(){
-  tone(880,.06,.09);
-  setTimeout(()=>tone(1100,.08,.07),60);
-  setTimeout(()=>tone(1320,.12,.05),130);
-}
-function playH(){tone(660,.05,.025,'triangle')}
-function playNav(){tone(440,.04,.03);setTimeout(()=>tone(550,.06,.02),50)}
-function playIP(){
-  [880,1100,1320,1760].forEach((f,i)=>setTimeout(()=>tone(f,.1,.08),i*55));
-}
+function tone(f,d,v=.08){try{const c=gac(),o=c.createOscillator(),g=c.createGain();o.connect(g);g.connect(c.destination);o.type='sine';o.frequency.setValueAtTime(f,c.currentTime);o.frequency.exponentialRampToValueAtTime(f*.65,c.currentTime+d);g.gain.setValueAtTime(v,c.currentTime);g.gain.exponentialRampToValueAtTime(.001,c.currentTime+d);o.start(c.currentTime);o.stop(c.currentTime+d)}catch(e){}}
+function playC(){tone(880,.12,.1)}
+function playH(){tone(660,.06,.03)}
 document.querySelectorAll('.fc,.pc,.sc,.fact,.cf,.pf').forEach(el=>el.addEventListener('mouseenter',playH));
-document.querySelectorAll('.nav-links a').forEach(el=>el.addEventListener('click',playNav));
 
 // ── COPY IP ──────────────────────────────────────────
 function copyIP(){
@@ -878,21 +578,131 @@ function copyIP(){
     el.textContent='✓ СКОПИРОВАНО!';el.style.color='#22c55e';
     setTimeout(()=>{el.textContent=old;el.style.color=''},2500);
     const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);
-    playIP();
+    tone(880,.04);setTimeout(()=>tone(1100,.08),55);
   });
 }
 
-// ── SERVER STATUS ────────────────────────────────────
-async function checkStatus(){
-  try{
-    const r=await fetch('https://api.mcstatus.io/v2/status/java/185.9.145.89:32509');
-    const d=await r.json();
-    const el=document.getElementById('statusText');
-    if(d.online){el.textContent=`Онлайн · ${d.players?.online||0}/${d.players?.max||50}`}
-    else{el.textContent='Оффлайн';document.querySelector('.sdot').style.cssText='background:#ef4444;box-shadow:0 0 8px #ef4444'}
-  }catch(e){document.getElementById('statusText').textContent='Онлайн'}
+// ── REAL SERVER STATUS (mcstatus.io API) ─────────────
+// Единственный публичный API для Minecraft серверов без своего бэкенда
+// Данные: онлайн, игроки, версия — РЕАЛЬНЫЕ
+// Кланы/аукцион требуют собственного HTTP API на сервере (см. примечание ниже)
+
+const SRV = '185.9.145.89:32509';
+const SRV_API = `https://api.mcstatus.io/v2/status/java/${SRV}`;
+
+let lastServerData = null;
+
+async function fetchServer() {
+  try {
+    const r = await fetch(SRV_API);
+    const d = await r.json();
+    lastServerData = d;
+    updateNavStatus(d);
+    updateServerPanel(d);
+    updateAuctionStatus(d);
+  } catch(e) {
+    updateNavStatus(null);
+  }
 }
-checkStatus();setInterval(checkStatus,30000);
+
+function updateNavStatus(d) {
+  const el = document.getElementById('statusText');
+  const dot = document.querySelector('.sdot');
+  if (!d || !d.online) {
+    el.textContent = 'Оффлайн';
+    if(dot) dot.style.cssText = 'background:#ef4444;box-shadow:0 0 8px #ef4444;width:7px;height:7px;border-radius:50%;animation:sp 2s infinite';
+  } else {
+    el.textContent = `Онлайн · ${d.players?.online ?? 0}/${d.players?.max ?? 50}`;
+    if(dot) dot.style.cssText = 'background:#22c55e;box-shadow:0 0 8px #22c55e;width:7px;height:7px;border-radius:50%;animation:sp 2s infinite';
+  }
+}
+
+function updateServerPanel(d) {
+  const onEl = document.getElementById('srvOnline');
+  const maxEl = document.getElementById('srvMax');
+  const verEl = document.getElementById('srvVer');
+  const stEl = document.getElementById('srvStatus');
+  const plEl = document.getElementById('srvPlayers');
+  if (!onEl) return;
+
+  if (!d || !d.online) {
+    if(onEl) onEl.textContent = '0';
+    if(maxEl) maxEl.textContent = '50';
+    if(verEl) verEl.textContent = '1.21.10';
+    if(stEl) { stEl.textContent = 'OFFLINE'; stEl.style.color = '#ef4444'; }
+    if(plEl) plEl.innerHTML = '<span style="color:rgba(240,244,255,.25);font-style:italic">Сервер недоступен</span>';
+    return;
+  }
+
+  if(onEl) onEl.textContent = d.players?.online ?? 0;
+  if(maxEl) maxEl.textContent = d.players?.max ?? 50;
+
+  // Version cleanup
+  const ver = (d.version?.name_clean || d.version?.name || '1.21.10').replace(/[^0-9.]/g,'').replace(/^\.+|\.+$/g,'') || '1.21.10';
+  if(verEl) verEl.textContent = ver;
+
+  if(stEl) { stEl.textContent = 'ONLINE'; stEl.style.color = '#22c55e'; }
+
+  // Player list — real names from API
+  if(plEl) {
+    const players = d.players?.list ?? [];
+    if (players.length === 0) {
+      const cnt = d.players?.online ?? 0;
+      plEl.innerHTML = cnt > 0
+        ? `<span style="color:rgba(240,244,255,.35);font-style:italic">Онлайн: ${cnt} игр. (имена скрыты)</span>`
+        : `<span style="color:rgba(240,244,255,.25);font-style:italic">Никого нет. Заходи первым!</span>`;
+    } else {
+      plEl.innerHTML = players.slice(0, 12).map(p =>
+        `<span style="display:inline-block;margin-right:12px;color:var(--w);font-weight:600">
+          <span style="color:var(--bl)">▸</span> ${p.name_clean ?? p.name}
+        </span>`
+      ).join('') + (players.length > 12 ? `<span style="color:rgba(240,244,255,.3)"> +${players.length - 12} ещё</span>` : '');
+    }
+  }
+}
+
+function updateAuctionStatus(d) {
+  const badge = document.getElementById('auctBadge');
+  const status = document.getElementById('auctStatus');
+  if (!d || !d.online) {
+    if(badge) badge.textContent = '⬤ OFFLINE';
+    if(status) status.textContent = 'Сервер оффлайн — аукцион недоступен';
+  } else {
+    if(badge) badge.textContent = '⬤ LIVE';
+    if(status) status.textContent = `Сервер онлайн · ${d.players?.online ?? 0} игроков · Зайди чтобы увидеть лоты`;
+  }
+}
+
+// ── AUCTION DISPLAY ───────────────────────────────────
+// PlayerAuctions НЕ имеет публичного HTTP API.
+// Для реального отображения лотов нужно:
+//   1. Плагин "AuctionWebAPI" или "DiscordSRV + webhook"
+//   2. Свой бэкенд на сервере (Paper plugin → HTTP endpoint)
+//   3. Либо бот Discord с командой /auction list → парсить
+// Сейчас показываем честное сообщение:
+
+function showAuctionOfflineNote() {
+  const list = document.getElementById('auctList');
+  if (!list) return;
+  list.innerHTML = `
+    <div style="padding:32px 20px;text-align:center;border:1px solid rgba(26,111,196,.1);margin:8px 0;background:rgba(26,111,196,.03)">
+      <div style="font-size:28px;margin-bottom:14px">🏛️</div>
+      <div style="font-family:'Cinzel',serif;font-size:14px;font-weight:700;color:var(--w);margin-bottom:8px">Аукцион работает в игре</div>
+      <div style="font-size:12px;color:rgba(240,244,255,.45);line-height:1.7;max-width:400px;margin:0 auto">
+        Реальные лоты видны только внутри сервера.<br>
+        Команды: <code style="color:var(--bl)">/ah</code> — открыть · <code style="color:var(--bl)">/ah sell [цена]</code> — продать
+      </div>
+      <div style="margin-top:16px;display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:2px;color:var(--bl)">
+        <div class="ld"></div>IP: ${SRV}
+      </div>
+    </div>`;
+  const note = document.getElementById('auctNote');
+  if(note) note.textContent = 'Зайди на сервер чтобы торговать — /ah';
+}
+
+showAuctionOfflineNote();
+fetchServer();
+setInterval(fetchServer, 30000);
 
 // ── PROTECTION GRID ──────────────────────────────────
 function buildGrid(){
@@ -910,90 +720,15 @@ function buildGrid(){
   }
 }
 buildGrid();
-let pgWave=0;
 setInterval(()=>{
-  pgWave++;
   document.querySelectorAll('.cell.protected').forEach((c,i)=>{
-    setTimeout(()=>{
-      c.style.background='rgba(42,143,228,.42)';
-      c.style.boxShadow='0 0 6px rgba(26,111,196,.5)';
-      setTimeout(()=>{c.style.background='rgba(26,111,196,.16)';c.style.boxShadow=''},220);
-    },i*10);
+    setTimeout(()=>{c.style.background='rgba(26,111,196,.36)';setTimeout(()=>c.style.background='rgba(26,111,196,.16)',180)},i*12);
   });
-},3500);
+},4500);
 
-// ── SCROLL REVEAL WITH PARALLAX ──────────────────────
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.classList.add('in');
-      // play subtle sound when section enters view
-      if(e.target.tagName==='SECTION'||e.target.closest('section')){
-        setTimeout(()=>tone(330,.15,.015,'sine'),100);
-      }
-    }
-  });
-},{threshold:.06});
-document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%5)*.07+'s';obs.observe(el)});
-
-// ── SECTION GLOW ON SCROLL ───────────────────────────
-const secObs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.style.setProperty('--sec-glow','rgba(26,111,196,.04)');
-    }
-  });
-},{threshold:.1});
-document.querySelectorAll('section').forEach(s=>secObs.observe(s));
-
-// ── TYPEWRITER for eyebrow ───────────────────────────
-const eyeEl=document.querySelector('.eyebrow');
-if(eyeEl){
-  const txt=eyeEl.textContent;
-  eyeEl.textContent='';
-  let ti=0;
-  const tw=setInterval(()=>{
-    eyeEl.textContent+=txt[ti++];
-    if(ti>=txt.length)clearInterval(tw);
-  },40);
-}
-
-// ── COUNTER ANIMATION for stats ──────────────────────
-function animCount(el,target,suffix=''){
-  let cur=0;const dur=1800;const step=dur/60;
-  const inc=target/60;
-  const t=setInterval(()=>{
-    cur=Math.min(cur+inc,target);
-    el.textContent=Math.floor(cur)+(suffix||'');
-    if(cur>=target)clearInterval(t);
-  },step);
-}
-const statObs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      const v=e.target.querySelector('.it-val');
-      if(v&&!v.dataset.counted){
-        v.dataset.counted='1';
-        const raw=v.textContent.trim();
-        const num=parseFloat(raw);
-        const suf=raw.replace(/[\d.]/g,'');
-        if(!isNaN(num))animCount(v,num,suf);
-      }
-    }
-  });
-},{threshold:.5});
-document.querySelectorAll('.it').forEach(el=>statObs.observe(el));// ── BURGER MENU ──────────────────────────────────────
-function toggleNav(){
-  const b=document.getElementById('burger');
-  const n=document.getElementById('navLinks');
-  b.classList.toggle('open');
-  n.classList.toggle('open');
-  document.body.style.overflow=n.classList.contains('open')?'hidden':'';
-}
-function closeNav(){
-  document.getElementById('burger').classList.remove('open');
-  document.getElementById('navLinks').classList.remove('open');
-  document.body.style.overflow='';
-}
+// ── SCROLL REVEAL ────────────────────────────────────
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:.08});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%5)*.065+'s';obs.observe(el)});
 </script>
+</body>
 </html>
