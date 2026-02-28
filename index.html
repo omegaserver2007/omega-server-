@@ -238,7 +238,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
       <div class="corner tl"></div><div class="corner tr"></div>
       <div class="corner bl2"></div><div class="corner br"></div>
       <div class="ip-label">IP АДРЕС — НАЖМИ ЧТОБЫ СКОПИРОВАТЬ</div>
-      <div class="ip-val" id="serverIP">185.9.145.89:32509</div>
+      <div class="ip-val" id="serverIP">mc.omegaserver.online</div>
     </div>
     <div class="ip-hint">Нажми для копирования</div>
   </div>
@@ -572,7 +572,7 @@ document.querySelectorAll('.fc,.pc,.sc,.fact,.cf,.pf').forEach(el=>el.addEventLi
 
 // ── COPY IP ──────────────────────────────────────────
 function copyIP(){
-  const ip='185.9.145.89:32509';
+  const ip='mc.omegaserver.online';
   navigator.clipboard.writeText(ip).then(()=>{
     const el=document.getElementById('serverIP'),old=el.textContent;
     el.textContent='✓ СКОПИРОВАНО!';el.style.color='#22c55e';
@@ -587,7 +587,7 @@ function copyIP(){
 // Данные: онлайн, игроки, версия — РЕАЛЬНЫЕ
 // Кланы/аукцион требуют собственного HTTP API на сервере (см. примечание ниже)
 
-const SRV = '185.9.145.89:32509';
+const SRV = 'mc.omegaserver.online';
 const SRV_API = `https://api.mcstatus.io/v2/status/java/${SRV}`;
 
 let lastServerData = null;
